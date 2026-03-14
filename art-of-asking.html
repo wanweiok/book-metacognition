@@ -19,27 +19,36 @@
         </div>
       </a>
     </div>
+    <div style="padding:12px 16px 0;">
+      <button class="search-trigger" onclick="openSearch()">
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="8"/><path d="m21 21-4.35-4.35"/></svg>
+        <span class="zh-text">搜索…</span><span class="en-text">Search…</span>
+        <kbd>Ctrl+K</kbd>
+      </button>
+    </div>
     <nav class="sidebar-nav">
       <div class="zh-text"><a class="nav-item " href="preface.html?lang=zh">序言</a>
 <a class="nav-item " href="the-inversion.html?lang=zh">第一章：倒转</a>
-<a class="nav-item " href="knowing-unknowns.html?lang=zh">第二章：知道自己不知道什么</a>
+<a class="nav-item " href="knowing-unknowns.html?lang=zh">第二章：知道未知</a>
 <a class="nav-item active" href="art-of-asking.html?lang=zh">第三章：提问的艺术</a>
 <a class="nav-item " href="attention-as-currency.html?lang=zh">第四章：注意力即货币</a>
 <a class="nav-item " href="learning-to-learn.html?lang=zh">第五章：学会学习</a>
 <a class="nav-item " href="judgment-gap.html?lang=zh">第六章：判断力鸿沟</a>
 <a class="nav-item " href="cross-domain-synthesis.html?lang=zh">第七章：跨域连接</a>
-<a class="nav-item " href="metacognitive-os.html?lang=zh">第八章：构建你的元认知操作系统</a>
-<a class="nav-item " href="future-of-cognition.html?lang=zh">第九章：人类认知的未来</a></div>
+<a class="nav-item " href="metacognitive-os.html?lang=zh">第八章：元认知 OS</a>
+<a class="nav-item " href="future-of-cognition.html?lang=zh">第九章：认知的未来</a>
+<a class="nav-item " href="glossary.html?lang=zh">附录：术语索引</a></div>
       <div class="en-text"><a class="nav-item " href="preface.html?lang=en">Preface</a>
 <a class="nav-item " href="the-inversion.html?lang=en">Ch1: The Inversion</a>
-<a class="nav-item " href="knowing-unknowns.html?lang=en">Ch2: Knowing Your Unknowns</a>
-<a class="nav-item active" href="art-of-asking.html?lang=en">Ch3: The Art of Asking</a>
-<a class="nav-item " href="attention-as-currency.html?lang=en">Ch4: Attention as Currency</a>
-<a class="nav-item " href="learning-to-learn.html?lang=en">Ch5: Learning to Learn</a>
-<a class="nav-item " href="judgment-gap.html?lang=en">Ch6: The Judgment Gap</a>
-<a class="nav-item " href="cross-domain-synthesis.html?lang=en">Ch7: Cross-Domain Synthesis</a>
-<a class="nav-item " href="metacognitive-os.html?lang=en">Ch8: Your Metacognitive OS</a>
-<a class="nav-item " href="future-of-cognition.html?lang=en">Ch9: The Future of Human Cognition</a></div>
+<a class="nav-item " href="knowing-unknowns.html?lang=en">Ch2: Knowing Unknowns</a>
+<a class="nav-item active" href="art-of-asking.html?lang=en">Ch3: Art of Asking</a>
+<a class="nav-item " href="attention-as-currency.html?lang=en">Ch4: Attention</a>
+<a class="nav-item " href="learning-to-learn.html?lang=en">Ch5: Learning</a>
+<a class="nav-item " href="judgment-gap.html?lang=en">Ch6: Judgment Gap</a>
+<a class="nav-item " href="cross-domain-synthesis.html?lang=en">Ch7: Cross-Domain</a>
+<a class="nav-item " href="metacognitive-os.html?lang=en">Ch8: Meta OS</a>
+<a class="nav-item " href="future-of-cognition.html?lang=en">Ch9: The Future</a>
+<a class="nav-item " href="glossary.html?lang=en">Glossary</a></div>
     </nav>
     <div class="sidebar-footer">
       <button class="lang-toggle" onclick="toggleLang()">
@@ -63,6 +72,7 @@
 <p>老陈没有批评他，而是坐下来，和小王一起打开 ChatGPT。但老陈输入的，完全是另一类问题：「我们的客户假设他们的核心用户是 25–35 岁的都市白领。请列举五个理由，说明这个用户画像可能根本是错的。」「如果我们把目标用户换成 45 岁以上的家庭决策者，整个策略框架会如何改变？」</p>
 <p>三个问题之后，小王发现：他们之前的方案，建立在几个从未被检验过的隐性假设之上。而一旦这些假设不成立，那份「最佳策略」可能会把客户带进死胡同。</p>
 <p>第二天，项目方向发生了根本转变。不是因为老陈比小王懂得更多——两人用的都是同一套工具。<strong>区别在于问题的质量。</strong> 小王要的是答案；老陈要的是揭示那些藏在答案背后的、可能致命的假设。</p>
+<p>类似的场景每天在全球各地上演。东京的一位医生在使用 AI 诊断辅助系统时，习惯性地问「这个患者可能有什么病？」，直到一位来自肯尼亚的进修医生问了一个不同的问题：「这个患者的生活环境中，有什么因素可能使诊断变得不可靠？」这个问题 AI 无法生成，因为它需要对医疗系统之外的社会现实有跨域理解。硅谷、内罗毕、上海——不同文化背景的提问者，往往能看到不同的盲区。</p>
 <hr />
 <h2 id="32">3.2 核心命题：在即答时代，提问能力决定一切</h2>
 <p>当 AI 几乎能回答任何问题时，<strong>提出正确问题的能力</strong>（the ability to ask the right question）成为了决定性的竞争优势。这不是知识层面的较量——你很难在任何一个垂直领域的信息量上胜过 AI。这是元认知层面的较量：你需要思考「你正在思考什么」，你需要判断「你该问什么」，你需要有能力在无数个可能的问题中，筛选出那个真正值得追问的。</p>
@@ -111,6 +121,7 @@
 <p>但提示工程只是冰山一角。它的本质是<strong>元认知在人与 AI 协作中的应用</strong>：你在设计输入时，实际上是在设计你的认知目标；你在迭代提示时，是在校准「我真正想得到什么」。优秀的提示工程师，往往具备一种隐性能力：他们能够清晰地区分「我想问的」和「我实际在问的」，并主动缩小两者之间的差距。</p>
 <p>这不是技术技巧，而是元认知习惯。你可以在每次向 AI 提问前，花十秒钟问自己：我真正想回答的是什么？这个问题能带我去那里吗？</p>
 <h3 id="336">3.3.6 元问题：最有力的问题</h3>
+<p>在第一章，我们看到知识不对称的倒转如何改变了人类的价值锚点。在第二章，我们探讨了「知道自己不知道什么」的校准能力。现在我们要问一个更深层的问题：这些能力的入口在哪里？答案是——<strong>提问</strong>。</p>
 <p><strong>「我是不是在问对的问题？」</strong> ——这个问题本身，就是最有力的问题。</p>
 <p>它迫使你暂停「提问—回答」的惯性，转而审视问题本身。大多数人在遇到困难时，会本能地追问「答案是什么」。很少有人会先追问「我是不是问错了问题」。而恰恰是后者，往往能够打破僵局——当你在错误的问题上越努力，你离真正的突破就越远。</p>
 <hr />
@@ -191,6 +202,7 @@
 <p>Chen didn't scold him. Instead, he sat down and opened ChatGPT with Alex—but Chen typed something entirely different: "Our client assumes their core users are urban white-collar workers aged 25–35. List five reasons why this user profile might be fundamentally wrong." "If we switched the target audience to family decision-makers over 45, how would the entire strategy framework change?"</p>
 <p>After three questions, Alex realized: their previous approach rested on several implicit assumptions that had never been tested. And if any of those assumptions were false, that "best strategy" could lead the client into a dead end.</p>
 <p>The next day, the project's direction shifted fundamentally. Not because Chen knew more than Alex—both used the same tools. <strong>The difference was the quality of the question.</strong> Alex had asked for an answer; Chen had asked to expose the assumptions that might prove fatal.</p>
+<p>Similar scenes play out globally every day. A doctor in Tokyo using an AI diagnostic system habitually asks "What disease might this patient have?"—until a visiting fellow from Kenya poses a different question: "What factors in this patient's living environment might make the diagnosis unreliable?" AI cannot generate this question because it requires cross-domain understanding of social realities beyond medicine. Silicon Valley, Nairobi, Shanghai—questioners from different cultural backgrounds often see different blind spots.</p>
 <hr />
 <h2 id="32-core-thesis-in-the-age-of-instant-answers-questioning-decides-everything">3.2 Core Thesis: In the Age of Instant Answers, Questioning Decides Everything</h2>
 <p>When AI can answer almost any question, <strong>the ability to ask the right question</strong> becomes the decisive competitive advantage. This is not a contest of knowledge—you can hardly outdo AI in sheer information volume in any vertical domain. It is a contest of metacognition: you must think about what you are trying to think about; you must judge what you ought to ask; you must be able to sift, from countless possible questions, the one truly worth pursuing.</p>
@@ -239,6 +251,7 @@
 <p>But prompt engineering is only the tip of the iceberg. Its essence is <strong>metacognition applied to human-AI collaboration</strong>: when you design the input, you are designing your cognitive aim; when you iterate the prompt, you are calibrating "what I really want to get." Skilled prompt engineers often have an implicit ability: they can clearly distinguish "what I want to ask" from "what I am actually asking," and actively narrow the gap.</p>
 <p>This is not a technical trick but a metacognitive habit. Before each question to AI, spend ten seconds asking yourself: What do I really want to answer? Will this question take me there?</p>
 <h3 id="336-the-meta-question-the-most-powerful-question">3.3.6 The Meta-Question: The Most Powerful Question</h3>
+<p>In Chapter 1, we saw how the inversion of knowledge asymmetry shifted the human value anchor. In Chapter 2, we explored the calibration skill of knowing what you don't know. Now we ask a deeper question: where is the entry point to these capabilities? The answer is <strong>asking questions</strong>.</p>
 <p><strong>"Am I asking the right question?"</strong>—This question itself is the most powerful.</p>
 <p>It forces you to pause the inertia of "ask–answer" and instead examine the question. Most people, when stuck, instinctively push for "what is the answer." Few first ask "am I asking the wrong question." Yet it is the latter that often breaks the deadlock—the harder you work on the wrong question, the farther you drift from real breakthroughs.</p>
 <hr />
@@ -310,8 +323,8 @@
 </ol></div>
     </article>
     <nav class="page-nav">
-      <a class="nav-btn prev" href="knowing-unknowns.html">← <span class="zh-text">第二章：知道自己不知道什么</span><span class="en-text">Ch2: Knowing Your Unknowns</span></a>
-      <a class="nav-btn next" href="attention-as-currency.html"><span class="zh-text">第四章：注意力即货币</span><span class="en-text">Ch4: Attention as Currency</span> →</a>
+      <a class="nav-btn prev" href="knowing-unknowns.html">← <span class="zh-text">第二章：知道未知</span><span class="en-text">Ch2: Knowing Unknowns</span></a>
+      <a class="nav-btn next" href="attention-as-currency.html"><span class="zh-text">第四章：注意力即货币</span><span class="en-text">Ch4: Attention</span> →</a>
     </nav>
   </main>
 </div>
@@ -320,6 +333,15 @@
 import mermaid from 'https://cdn.jsdelivr.net/npm/mermaid@11/dist/mermaid.esm.min.mjs';
 mermaid.initialize({ startOnLoad: true, theme: document.body.classList.contains('light') ? 'default' : 'dark' });
 </script>
+<div id="searchOverlay" class="search-overlay" onclick="if(event.target===this)closeSearch()">
+  <div class="search-box">
+    <div class="search-input-wrap">
+      <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="8"/><path d="m21 21-4.35-4.35"/></svg>
+      <input id="searchInput" class="search-input" placeholder="搜索全书内容… / Search all chapters…" oninput="handleSearch(this.value)" autocomplete="off">
+    </div>
+    <div id="searchResults" class="search-results"></div>
+  </div>
+</div>
 <script src="js/main.js"></script>
 </body>
 </html>

@@ -19,27 +19,36 @@
         </div>
       </a>
     </div>
+    <div style="padding:12px 16px 0;">
+      <button class="search-trigger" onclick="openSearch()">
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="8"/><path d="m21 21-4.35-4.35"/></svg>
+        <span class="zh-text">搜索…</span><span class="en-text">Search…</span>
+        <kbd>Ctrl+K</kbd>
+      </button>
+    </div>
     <nav class="sidebar-nav">
       <div class="zh-text"><a class="nav-item " href="preface.html?lang=zh">序言</a>
 <a class="nav-item " href="the-inversion.html?lang=zh">第一章：倒转</a>
-<a class="nav-item " href="knowing-unknowns.html?lang=zh">第二章：知道自己不知道什么</a>
+<a class="nav-item " href="knowing-unknowns.html?lang=zh">第二章：知道未知</a>
 <a class="nav-item " href="art-of-asking.html?lang=zh">第三章：提问的艺术</a>
 <a class="nav-item " href="attention-as-currency.html?lang=zh">第四章：注意力即货币</a>
 <a class="nav-item active" href="learning-to-learn.html?lang=zh">第五章：学会学习</a>
 <a class="nav-item " href="judgment-gap.html?lang=zh">第六章：判断力鸿沟</a>
 <a class="nav-item " href="cross-domain-synthesis.html?lang=zh">第七章：跨域连接</a>
-<a class="nav-item " href="metacognitive-os.html?lang=zh">第八章：构建你的元认知操作系统</a>
-<a class="nav-item " href="future-of-cognition.html?lang=zh">第九章：人类认知的未来</a></div>
+<a class="nav-item " href="metacognitive-os.html?lang=zh">第八章：元认知 OS</a>
+<a class="nav-item " href="future-of-cognition.html?lang=zh">第九章：认知的未来</a>
+<a class="nav-item " href="glossary.html?lang=zh">附录：术语索引</a></div>
       <div class="en-text"><a class="nav-item " href="preface.html?lang=en">Preface</a>
 <a class="nav-item " href="the-inversion.html?lang=en">Ch1: The Inversion</a>
-<a class="nav-item " href="knowing-unknowns.html?lang=en">Ch2: Knowing Your Unknowns</a>
-<a class="nav-item " href="art-of-asking.html?lang=en">Ch3: The Art of Asking</a>
-<a class="nav-item " href="attention-as-currency.html?lang=en">Ch4: Attention as Currency</a>
-<a class="nav-item active" href="learning-to-learn.html?lang=en">Ch5: Learning to Learn</a>
-<a class="nav-item " href="judgment-gap.html?lang=en">Ch6: The Judgment Gap</a>
-<a class="nav-item " href="cross-domain-synthesis.html?lang=en">Ch7: Cross-Domain Synthesis</a>
-<a class="nav-item " href="metacognitive-os.html?lang=en">Ch8: Your Metacognitive OS</a>
-<a class="nav-item " href="future-of-cognition.html?lang=en">Ch9: The Future of Human Cognition</a></div>
+<a class="nav-item " href="knowing-unknowns.html?lang=en">Ch2: Knowing Unknowns</a>
+<a class="nav-item " href="art-of-asking.html?lang=en">Ch3: Art of Asking</a>
+<a class="nav-item " href="attention-as-currency.html?lang=en">Ch4: Attention</a>
+<a class="nav-item active" href="learning-to-learn.html?lang=en">Ch5: Learning</a>
+<a class="nav-item " href="judgment-gap.html?lang=en">Ch6: Judgment Gap</a>
+<a class="nav-item " href="cross-domain-synthesis.html?lang=en">Ch7: Cross-Domain</a>
+<a class="nav-item " href="metacognitive-os.html?lang=en">Ch8: Meta OS</a>
+<a class="nav-item " href="future-of-cognition.html?lang=en">Ch9: The Future</a>
+<a class="nav-item " href="glossary.html?lang=en">Glossary</a></div>
     </nav>
     <div class="sidebar-footer">
       <button class="lang-toggle" onclick="toggleLang()">
@@ -63,6 +72,7 @@
 <p>公司接了一个前所未有的项目：技术栈是全新的，需求模糊，没有现成的参考实现。小张打开 ChatGPT，输入问题，得到的回答要么过于泛化，要么根本不适用。他习惯了「提问—获得答案」的节奏，却不知道如何在没有现成答案时自己搭建思维框架。他反复追问 AI，得到的只是一堆零散的碎片，他无法将它们整合成可执行的方案。</p>
 <p>小李则开始崭露头角。过去一年里，他每一次「费力」的挣扎，都在脑海中建构了心智模型（mental model）。他知道如何拆解陌生问题、如何假设、如何验证、如何迭代。当 AI 无法直接给出答案时，他能够自己搭建脚手架，然后再用 AI 来填补细节。他解决的是新问题（novel problems）——那种 AI 训练数据里从未出现过的情境。</p>
 <p><strong>小张会用工具，却离不开工具。小李建构了可迁移的心智模型，在工具失效时仍能思考。</strong></p>
+<p>这不只是程序员的困境。柏林一位钢琴教师发现，学生们开始用 AI 生成的指法建议来「跳过」基础练习。短期内他们能弹出更复杂的曲子，但在即兴演奏和视奏（sight-reading）环节——需要深层肌肉记忆和直觉判断的场景——他们的表现明显退化。芬兰一家工程咨询公司的培训主管也观察到类似模式：年轻工程师用 AI 跳过了手算结构力学的阶段，在面对非标准项目时缺乏「结构直觉」。学习的捷径，有时恰恰是成长的弯路。</p>
 <hr />
 <h2 id="52">5.2 核心命题：学习不等于表现</h2>
 <p><strong>学习</strong>（learning）和<strong>表现</strong>（performance）是两回事。这一区分在 AI 时代变得至关重要。</p>
@@ -109,6 +119,7 @@
     end
 </div>
 <h3 id="537-ai">5.3.7 何时用 AI 当导师，何时独自挣扎：决策框架</h3>
+<p>第四章讨论了注意力分配的四象限（创造、评估、消费、反应）。学习模式与生产模式的切换，本质上也是一种注意力分配决策：你是把注意力投向「产出结果」还是「构建能力」？这两者的权衡，需要元认知觉察。</p>
 <p>一个实用的元认知决策框架，可以基于三个问题：</p>
 <ol>
 <li>
@@ -197,6 +208,7 @@
 <p>The company landed an unprecedented project: a new tech stack, fuzzy requirements, no ready reference implementation. Alex opened ChatGPT and typed his questions. The answers were either too generic or plainly wrong. He had grown used to "ask—get answer"; he didn't know how to build a thinking framework when no ready answer existed. He kept prompting, but got only scattered fragments he couldn't turn into executable plans.</p>
 <p>Ben started to shine. Every "effortful" struggle over the past year had built <strong>mental models</strong> (心智模型) in his mind. He knew how to break down unfamiliar problems, how to hypothesize, verify, and iterate. When AI couldn't give direct answers, he could build his own scaffold and then use AI to fill in details. He solved <strong>novel problems</strong> (新问题)—situations that never appeared in AI training data.</p>
 <p><strong>Alex could use tools but couldn't think without them. Ben had built transferable mental models and could still think when tools failed.</strong></p>
+<p>This isn't just a programmer's dilemma. A piano teacher in Berlin noticed students using AI-generated fingering suggestions to "skip" fundamental exercises. Short-term, they played more complex pieces, but in improvisation and sight-reading—scenarios requiring deep muscle memory and intuitive judgment—their performance visibly deteriorated. A training director at a Finnish engineering consultancy observed the same pattern: junior engineers who used AI to skip hand-calculating structural mechanics lacked "structural intuition" when facing non-standard projects. The shortcut to learning is sometimes the detour from growth.</p>
 <hr />
 <h2 id="52-core-thesis-learning-is-not-performance">5.2 Core Thesis: Learning Is Not Performance</h2>
 <p><strong>Learning</strong> (学习) and <strong>performance</strong> (表现) are not the same. This distinction matters more than ever in the AI era.</p>
@@ -243,6 +255,7 @@
     end
 </div>
 <h3 id="537-when-to-use-ai-as-tutor-when-to-struggle-alone-a-decision-framework">5.3.7 When to Use AI as Tutor, When to Struggle Alone: A Decision Framework</h3>
+<p>Chapter 4 discussed the four quadrants of attention allocation (Creating, Evaluating, Consuming, Reacting). Switching between learning mode and production mode is essentially an attention allocation decision: are you directing attention toward 'producing output' or 'building capability'? This trade-off requires metacognitive awareness.</p>
 <p>A practical metacognitive framework rests on three questions:</p>
 <ol>
 <li>
@@ -322,8 +335,8 @@
 </ol></div>
     </article>
     <nav class="page-nav">
-      <a class="nav-btn prev" href="attention-as-currency.html">← <span class="zh-text">第四章：注意力即货币</span><span class="en-text">Ch4: Attention as Currency</span></a>
-      <a class="nav-btn next" href="judgment-gap.html"><span class="zh-text">第六章：判断力鸿沟</span><span class="en-text">Ch6: The Judgment Gap</span> →</a>
+      <a class="nav-btn prev" href="attention-as-currency.html">← <span class="zh-text">第四章：注意力即货币</span><span class="en-text">Ch4: Attention</span></a>
+      <a class="nav-btn next" href="judgment-gap.html"><span class="zh-text">第六章：判断力鸿沟</span><span class="en-text">Ch6: Judgment Gap</span> →</a>
     </nav>
   </main>
 </div>
@@ -332,6 +345,15 @@
 import mermaid from 'https://cdn.jsdelivr.net/npm/mermaid@11/dist/mermaid.esm.min.mjs';
 mermaid.initialize({ startOnLoad: true, theme: document.body.classList.contains('light') ? 'default' : 'dark' });
 </script>
+<div id="searchOverlay" class="search-overlay" onclick="if(event.target===this)closeSearch()">
+  <div class="search-box">
+    <div class="search-input-wrap">
+      <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="8"/><path d="m21 21-4.35-4.35"/></svg>
+      <input id="searchInput" class="search-input" placeholder="搜索全书内容… / Search all chapters…" oninput="handleSearch(this.value)" autocomplete="off">
+    </div>
+    <div id="searchResults" class="search-results"></div>
+  </div>
+</div>
 <script src="js/main.js"></script>
 </body>
 </html>

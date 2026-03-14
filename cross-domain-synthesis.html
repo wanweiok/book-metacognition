@@ -19,27 +19,36 @@
         </div>
       </a>
     </div>
+    <div style="padding:12px 16px 0;">
+      <button class="search-trigger" onclick="openSearch()">
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="8"/><path d="m21 21-4.35-4.35"/></svg>
+        <span class="zh-text">搜索…</span><span class="en-text">Search…</span>
+        <kbd>Ctrl+K</kbd>
+      </button>
+    </div>
     <nav class="sidebar-nav">
       <div class="zh-text"><a class="nav-item " href="preface.html?lang=zh">序言</a>
 <a class="nav-item " href="the-inversion.html?lang=zh">第一章：倒转</a>
-<a class="nav-item " href="knowing-unknowns.html?lang=zh">第二章：知道自己不知道什么</a>
+<a class="nav-item " href="knowing-unknowns.html?lang=zh">第二章：知道未知</a>
 <a class="nav-item " href="art-of-asking.html?lang=zh">第三章：提问的艺术</a>
 <a class="nav-item " href="attention-as-currency.html?lang=zh">第四章：注意力即货币</a>
 <a class="nav-item " href="learning-to-learn.html?lang=zh">第五章：学会学习</a>
 <a class="nav-item " href="judgment-gap.html?lang=zh">第六章：判断力鸿沟</a>
 <a class="nav-item active" href="cross-domain-synthesis.html?lang=zh">第七章：跨域连接</a>
-<a class="nav-item " href="metacognitive-os.html?lang=zh">第八章：构建你的元认知操作系统</a>
-<a class="nav-item " href="future-of-cognition.html?lang=zh">第九章：人类认知的未来</a></div>
+<a class="nav-item " href="metacognitive-os.html?lang=zh">第八章：元认知 OS</a>
+<a class="nav-item " href="future-of-cognition.html?lang=zh">第九章：认知的未来</a>
+<a class="nav-item " href="glossary.html?lang=zh">附录：术语索引</a></div>
       <div class="en-text"><a class="nav-item " href="preface.html?lang=en">Preface</a>
 <a class="nav-item " href="the-inversion.html?lang=en">Ch1: The Inversion</a>
-<a class="nav-item " href="knowing-unknowns.html?lang=en">Ch2: Knowing Your Unknowns</a>
-<a class="nav-item " href="art-of-asking.html?lang=en">Ch3: The Art of Asking</a>
-<a class="nav-item " href="attention-as-currency.html?lang=en">Ch4: Attention as Currency</a>
-<a class="nav-item " href="learning-to-learn.html?lang=en">Ch5: Learning to Learn</a>
-<a class="nav-item " href="judgment-gap.html?lang=en">Ch6: The Judgment Gap</a>
-<a class="nav-item active" href="cross-domain-synthesis.html?lang=en">Ch7: Cross-Domain Synthesis</a>
-<a class="nav-item " href="metacognitive-os.html?lang=en">Ch8: Your Metacognitive OS</a>
-<a class="nav-item " href="future-of-cognition.html?lang=en">Ch9: The Future of Human Cognition</a></div>
+<a class="nav-item " href="knowing-unknowns.html?lang=en">Ch2: Knowing Unknowns</a>
+<a class="nav-item " href="art-of-asking.html?lang=en">Ch3: Art of Asking</a>
+<a class="nav-item " href="attention-as-currency.html?lang=en">Ch4: Attention</a>
+<a class="nav-item " href="learning-to-learn.html?lang=en">Ch5: Learning</a>
+<a class="nav-item " href="judgment-gap.html?lang=en">Ch6: Judgment Gap</a>
+<a class="nav-item active" href="cross-domain-synthesis.html?lang=en">Ch7: Cross-Domain</a>
+<a class="nav-item " href="metacognitive-os.html?lang=en">Ch8: Meta OS</a>
+<a class="nav-item " href="future-of-cognition.html?lang=en">Ch9: The Future</a>
+<a class="nav-item " href="glossary.html?lang=en">Glossary</a></div>
     </nav>
     <div class="sidebar-footer">
       <button class="lang-toggle" onclick="toggleLang()">
@@ -109,9 +118,17 @@
 <p>Schön（1983）在《反思性实践者》（<em>The Reflective Practitioner</em>）中提出：专业人士创造新知识的方式，不是应用课本规则，而是<strong>在独特情境中反思</strong>（reflection-in-action）。面对从未见过的客户、从未遇到过的故障、从未写进教材的边界条件，他们调动的是全部人生经验——不仅仅是专业训练，还有跨域的经历、偶发的阅读、某个电影里的场景、某次旅行中的观察。</p>
 <p>这种<strong>反思中的行动</strong>（reflection-in-action）本质上是跨域的。你把整个「你」带入一个新问题——你的专业、你的兴趣、你的失败、你的偏见、你读过的诗、你看过的纪录片。AI 可以检索专业文献，却无法检索「你的整个人生」。那个综合，是人类独有的。</p>
 <h3 id="737-ai">7.3.7 为什么 AI 难以跨域连接</h3>
+<p>在第三章，我们看到提问的层级——从事实性问题（AI 擅长）到元问题（人类领地）。在第六章，我们讨论了判断力鸿沟——AI 优化指标，人类裁决价值。跨域连接是这两种元认知能力的自然延伸：它需要你在「问对的问题」的同时，判断「哪个来自另一个领域的片段值得关注」。</p>
 <p>AI 的训练是<strong>领域分割</strong>的。即使「通用」大模型，本质上也还是在训练分布内做模式匹配。当它被问及跨域问题时，它往往是在检索训练数据中<strong>已经存在</strong>的跨域类比，而非创造<strong>从未被组合过</strong>的新连接。</p>
 <p>真正的创造性——把从未被并列过的观念组合起来——需要一种<strong>创造性元认知</strong>（creative metacognition）：主动偏离当前焦点、容忍模糊关联、在「这好像没什么用」的念头前停顿一下而非立即否决。这种能力，目前还未进入 AI 的标配。</p>
 <p>Koestler（1964）在《创造行为》（<em>The Act of Creation</em>）中提出<strong>双重联想</strong>（bisociation）理论：创造性洞察发生在两个原本独立的「母体」突然交汇的时刻。人类心智天然地在不同母体间游荡；AI 的注意力则被当前的 prompt 紧紧锚定。游荡，是人类的特权。</p>
+<h3 id="738">7.3.8 真实案例：跨域连接改变世界的三个故事</h3>
+<p><strong>乔布斯与书法</strong>。史蒂夫·乔布斯年轻时在里德学院旁听了一门书法课——与计算机毫无关系。他学习字体、间距、衬线，纯粹出于审美。多年后，当他在设计第一台 Mac 时，那段经历突然被唤醒。Mac 的革命性字体、比例间距、多字体排版，直接源于那次跨域接触。没有任何算法建议过这一连接。是一个人类心智，把来自一个领域的碎片带进了另一个领域。</p>
+<p><strong>魔术贴与牛蒡</strong>。瑞士工程师乔治·德·梅斯特拉尔在徒步时注意到牛蒡的芒刺粘在狗的毛发上。他在显微镜下观察，发现芒刺上有微小的钩子。这一来自自然的观察，催生了魔术贴（Velcro）的发明——一个价值超过五亿美元的产业，源于生物学与材料科学之间的一刻跨域识别。</p>
+<p><strong>Netflix 大奖与音乐推荐</strong>。赢得 Netflix 大奖的团队结合了心理测量学（人格测试）、机器学习和电影研究的多重专长。没有任何单一领域的专家能单独取胜。关键突破来自团队中一位有音乐推荐系统背景的成员——他看到了电影偏好与音乐偏好之间的结构相似性。</p>
+<h3 id="739">7.3.9 思想实验：如果你只能在一个领域深耕</h3>
+<p>假设你被告知：你此生只能<strong>研究一个领域</strong>。一切跨域输入都被禁止。你只能阅读本专业的论文、书籍，只能参加本领域的活动。一年后，你的思维会怎样变化？五年后呢？十年后呢？</p>
+<p>起初，你可能会感到「更专注了」——没有了分心，效率似乎更高。但渐渐地，你的类比库会枯竭。你解释新现象时，只剩下本领域内的陈词。你的创造性问题会减少，因为「问题」本身往往来自其他领域的刺激。五年后，你可能成了本领域最懂细节的人，却也成了最看不见自己盲区的人——因为没有外缘视角来照亮它们。十年后，你的思维可能已经窄化到难以察觉：你问的问题、你用的比喻、你想象的解决方案，全都来自同一个回音室。这种认知窄化，是跨域连接被剥夺后的必然结局。</p>
 <hr />
 <h2 id="74-ai">7.4 反面论证：AI 的跨域能力在进步</h2>
 <p>AI <strong>确实</strong>在跨域连接上不断进步。GPT 可以建议类比；研究助手可以发掘（surface）意想不到的关联；多模态模型可以把图像、文本、代码放在同一空间内处理。人类的优势并非永久。</p>
@@ -216,9 +233,17 @@
 <p>Schön (1983) argues in <em>The Reflective Practitioner</em>: professionals create new knowledge not by applying textbook rules but by <strong>reflecting in unique situations</strong> (在独特情境中反思). Facing unseen clients, unprecedented failures, boundary conditions never written into textbooks, they draw on the whole of lived experience—not just professional training, but cross-domain experiences, accidental reading, a scene from a film, an observation from a trip.</p>
 <p>This <strong>reflection-in-action</strong> (反思中的行动) is inherently cross-domain. You bring the whole of "you" to a novel problem—your expertise, your interests, your failures, your biases, the poems you've read, the documentaries you've watched. AI can retrieve professional literature but cannot retrieve "your entire life." That synthesis is uniquely human.</p>
 <h3 id="737-why-ai-struggles-with-cross-domain-connection">7.3.7 Why AI Struggles with Cross-Domain Connection</h3>
+<p>In Chapter 3, we saw the hierarchy of questions—from factual (where AI excels) to meta-questions (human territory). In Chapter 6, we discussed the judgment gap—AI optimizes metrics while humans adjudicate values. Cross-domain synthesis is a natural extension of both: it requires asking the right questions while judging which fragment from another domain deserves attention.</p>
 <p>AI training is <strong>domain-segmented</strong>. Even "general" large models are essentially doing pattern matching within their training distribution. When asked cross-domain questions, they often retrieve cross-domain analogies that <strong>already exist</strong> in training data rather than creating <strong>never-before-combined</strong> connections.</p>
 <p>True novelty—combining ideas that have never been juxtaposed—requires <strong>creative metacognition</strong> (创造性元认知): actively deviating from the current focus, tolerating fuzzy associations, pausing at "this seems useless" instead of immediately dismissing. That capability is not yet standard in AI.</p>
 <p>Koestler (1964) proposes in <em>The Act of Creation</em> a theory of <strong>bisociation</strong> (双重联想): creative insight occurs when two previously separate "matrices" suddenly intersect. The human mind naturally wanders across matrices; AI attention remains tightly anchored to the current prompt. Wandering is a human privilege.</p>
+<h3 id="738-real-cases-three-cross-domain-connections-that-changed-the-world">7.3.8 Real Cases: Three Cross-Domain Connections That Changed the World</h3>
+<p><strong>Steve Jobs and calligraphy.</strong> As a young man, Jobs audited a calligraphy class at Reed College—wholly unrelated to computing. He studied fonts, spacing, and serifs purely for aesthetics. Years later, designing the first Mac, that exposure suddenly resurfaced. The Mac's revolutionary fonts, proportional spacing, and multi-font typography came directly from that cross-domain encounter. No algorithm suggested this connection. It was a human mind carrying fragments from one domain into another.</p>
+<p><strong>Velcro from burrs.</strong> Swiss engineer George de Mestral went hiking and noticed burrs sticking to his dog's fur. Under a microscope he saw tiny hooks. That observation from nature led to the invention of Velcro—a $500M+ industry from one moment of cross-domain recognition between biology and material science.</p>
+<p><strong>The Netflix Prize and music recommender.</strong> The winning team combined expertise in psychometrics (personality testing), machine learning, and cinema studies. No single-domain expert could have won. The breakthrough came from a team member with a background in music recommendation systems, who saw the structural similarity between movie and music preferences.</p>
+<h3 id="739-thought-experiment-if-you-could-only-study-one-field">7.3.9 Thought Experiment: If You Could Only Study One Field</h3>
+<p>You're told you can only study <strong>one field</strong> for the rest of your life. All cross-domain input is banned. You may only read papers, books, and attend events in your specialty. How would your thinking change in one year? Five years? Ten years?</p>
+<p>At first you might feel "more focused"—no distractions, efficiency seems higher. But gradually your analogy bank would shrink. Explaining new phenomena, you'd only have tired metaphors from your domain. Your creative questions would dwindle, because questions often arise from stimuli outside your field. After five years you might know the most detail within your domain yet be blindest to your own blind spots—no peripheral view to illuminate them. After ten years your thinking could narrow so subtly you'd hardly notice: the questions you ask, the analogies you use, the solutions you imagine, all from the same echo chamber. That cognitive narrowing is the inevitable outcome when cross-domain connection is cut off.</p>
 <hr />
 <h2 id="74-counter-argument-ais-cross-domain-ability-is-improving">7.4 Counter-Argument: AI's Cross-Domain Ability Is Improving</h2>
 <p>AI <strong>is</strong> getting better at cross-domain connections. GPT can suggest analogies; research assistants can surface unexpected links; multimodal models can process images, text, and code in a shared space. The human advantage is not permanent.</p>
@@ -268,8 +293,8 @@
 </ol></div>
     </article>
     <nav class="page-nav">
-      <a class="nav-btn prev" href="judgment-gap.html">← <span class="zh-text">第六章：判断力鸿沟</span><span class="en-text">Ch6: The Judgment Gap</span></a>
-      <a class="nav-btn next" href="metacognitive-os.html"><span class="zh-text">第八章：构建你的元认知操作系统</span><span class="en-text">Ch8: Your Metacognitive OS</span> →</a>
+      <a class="nav-btn prev" href="judgment-gap.html">← <span class="zh-text">第六章：判断力鸿沟</span><span class="en-text">Ch6: Judgment Gap</span></a>
+      <a class="nav-btn next" href="metacognitive-os.html"><span class="zh-text">第八章：元认知 OS</span><span class="en-text">Ch8: Meta OS</span> →</a>
     </nav>
   </main>
 </div>
@@ -278,6 +303,15 @@
 import mermaid from 'https://cdn.jsdelivr.net/npm/mermaid@11/dist/mermaid.esm.min.mjs';
 mermaid.initialize({ startOnLoad: true, theme: document.body.classList.contains('light') ? 'default' : 'dark' });
 </script>
+<div id="searchOverlay" class="search-overlay" onclick="if(event.target===this)closeSearch()">
+  <div class="search-box">
+    <div class="search-input-wrap">
+      <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="8"/><path d="m21 21-4.35-4.35"/></svg>
+      <input id="searchInput" class="search-input" placeholder="搜索全书内容… / Search all chapters…" oninput="handleSearch(this.value)" autocomplete="off">
+    </div>
+    <div id="searchResults" class="search-results"></div>
+  </div>
+</div>
 <script src="js/main.js"></script>
 </body>
 </html>

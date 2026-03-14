@@ -19,27 +19,36 @@
         </div>
       </a>
     </div>
+    <div style="padding:12px 16px 0;">
+      <button class="search-trigger" onclick="openSearch()">
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="8"/><path d="m21 21-4.35-4.35"/></svg>
+        <span class="zh-text">搜索…</span><span class="en-text">Search…</span>
+        <kbd>Ctrl+K</kbd>
+      </button>
+    </div>
     <nav class="sidebar-nav">
       <div class="zh-text"><a class="nav-item " href="preface.html?lang=zh">序言</a>
 <a class="nav-item " href="the-inversion.html?lang=zh">第一章：倒转</a>
-<a class="nav-item " href="knowing-unknowns.html?lang=zh">第二章：知道自己不知道什么</a>
+<a class="nav-item " href="knowing-unknowns.html?lang=zh">第二章：知道未知</a>
 <a class="nav-item " href="art-of-asking.html?lang=zh">第三章：提问的艺术</a>
 <a class="nav-item " href="attention-as-currency.html?lang=zh">第四章：注意力即货币</a>
 <a class="nav-item " href="learning-to-learn.html?lang=zh">第五章：学会学习</a>
 <a class="nav-item active" href="judgment-gap.html?lang=zh">第六章：判断力鸿沟</a>
 <a class="nav-item " href="cross-domain-synthesis.html?lang=zh">第七章：跨域连接</a>
-<a class="nav-item " href="metacognitive-os.html?lang=zh">第八章：构建你的元认知操作系统</a>
-<a class="nav-item " href="future-of-cognition.html?lang=zh">第九章：人类认知的未来</a></div>
+<a class="nav-item " href="metacognitive-os.html?lang=zh">第八章：元认知 OS</a>
+<a class="nav-item " href="future-of-cognition.html?lang=zh">第九章：认知的未来</a>
+<a class="nav-item " href="glossary.html?lang=zh">附录：术语索引</a></div>
       <div class="en-text"><a class="nav-item " href="preface.html?lang=en">Preface</a>
 <a class="nav-item " href="the-inversion.html?lang=en">Ch1: The Inversion</a>
-<a class="nav-item " href="knowing-unknowns.html?lang=en">Ch2: Knowing Your Unknowns</a>
-<a class="nav-item " href="art-of-asking.html?lang=en">Ch3: The Art of Asking</a>
-<a class="nav-item " href="attention-as-currency.html?lang=en">Ch4: Attention as Currency</a>
-<a class="nav-item " href="learning-to-learn.html?lang=en">Ch5: Learning to Learn</a>
-<a class="nav-item active" href="judgment-gap.html?lang=en">Ch6: The Judgment Gap</a>
-<a class="nav-item " href="cross-domain-synthesis.html?lang=en">Ch7: Cross-Domain Synthesis</a>
-<a class="nav-item " href="metacognitive-os.html?lang=en">Ch8: Your Metacognitive OS</a>
-<a class="nav-item " href="future-of-cognition.html?lang=en">Ch9: The Future of Human Cognition</a></div>
+<a class="nav-item " href="knowing-unknowns.html?lang=en">Ch2: Knowing Unknowns</a>
+<a class="nav-item " href="art-of-asking.html?lang=en">Ch3: Art of Asking</a>
+<a class="nav-item " href="attention-as-currency.html?lang=en">Ch4: Attention</a>
+<a class="nav-item " href="learning-to-learn.html?lang=en">Ch5: Learning</a>
+<a class="nav-item active" href="judgment-gap.html?lang=en">Ch6: Judgment Gap</a>
+<a class="nav-item " href="cross-domain-synthesis.html?lang=en">Ch7: Cross-Domain</a>
+<a class="nav-item " href="metacognitive-os.html?lang=en">Ch8: Meta OS</a>
+<a class="nav-item " href="future-of-cognition.html?lang=en">Ch9: The Future</a>
+<a class="nav-item " href="glossary.html?lang=en">Glossary</a></div>
     </nav>
     <div class="sidebar-footer">
       <button class="lang-toggle" onclick="toggleLang()">
@@ -67,6 +76,7 @@
 <p>董事长环顾四周。财务和运营的意见已经很明确。他看向老医生：「你的建议呢？」</p>
 <p>「我建议保留。」老医生顿了顿，「不是因为它赚钱。是因为有些事情，不该只用钱来衡量。」</p>
 <p>董事会最终决定：诊所保留。那天下午，没有人能说清「正确的」答案是什么。但至少，他们知道这个决定背后，站着的是人。</p>
+<p>这个故事不限于医疗场景。在巴西圣保罗，一家银行的 AI 风控系统建议拒绝某个社区的所有小额贷款申请——数据「客观地」显示该区域违约率高。一位出生在那个社区的信贷经理拒绝了 AI 的建议。她知道数据看不到的东西：那个社区刚经历了一场洪水，违约率的飙升是临时性的，而非结构性的。AI 优化了统计指标；人类保护了公平与机遇。在价值判断面前，数据的「正确」和决策的「正确」并不总是同一件事。</p>
 <hr />
 <h2 id="62">6.2 核心命题：谁来决定什么值得被优化？</h2>
 <p>AI 擅长在<strong>既定参数内</strong>做优化。给它一个目标函数，它能找到最优解；给它约束条件，它能在边界内寻优。但<strong>选择哪些参数值得被优化</strong>——什么值得被重视、什么值得被牺牲、什么根本不该进入「优化」的框架——这是人类独有的判断。</p>
@@ -190,6 +200,7 @@
 <p>The chairman looks around. Finance and operations are clear. He turns to the doctor. "Your recommendation?"</p>
 <p>"I recommend we keep it." The doctor pauses. "Not because it makes money. Because some things shouldn't be measured only by money."</p>
 <p>The board voted to keep the clinic open. That afternoon, no one could say what the "correct" answer was. But at least they knew that behind this decision stood a human being.</p>
+<p>This story isn't limited to healthcare. In São Paulo, a bank's AI risk system recommended rejecting all micro-loan applications from a particular neighborhood—the data "objectively" showed high default rates. A credit manager who grew up in that community overrode the AI. She knew what the data couldn't see: the neighborhood had just experienced a flood, and the spike in defaults was temporary, not structural. AI optimized statistical metrics; the human protected fairness and opportunity. When it comes to value judgments, what is "correct" by data and what is "correct" by decision are not always the same thing.</p>
 <hr />
 <h2 id="62-core-thesis-who-decides-what-to-optimize">6.2 Core Thesis: Who Decides What to Optimize?</h2>
 <p>AI excels at optimization <strong>within defined parameters</strong>. Give it an objective function, and it finds the optimum; give it constraints, and it searches within the boundary. But choosing <strong>which parameters</strong> to optimize—what to value, what to sacrifice, what should never enter the "optimization" frame at all—is a fundamentally human judgment.</p>
@@ -300,8 +311,8 @@
 </ol></div>
     </article>
     <nav class="page-nav">
-      <a class="nav-btn prev" href="learning-to-learn.html">← <span class="zh-text">第五章：学会学习</span><span class="en-text">Ch5: Learning to Learn</span></a>
-      <a class="nav-btn next" href="cross-domain-synthesis.html"><span class="zh-text">第七章：跨域连接</span><span class="en-text">Ch7: Cross-Domain Synthesis</span> →</a>
+      <a class="nav-btn prev" href="learning-to-learn.html">← <span class="zh-text">第五章：学会学习</span><span class="en-text">Ch5: Learning</span></a>
+      <a class="nav-btn next" href="cross-domain-synthesis.html"><span class="zh-text">第七章：跨域连接</span><span class="en-text">Ch7: Cross-Domain</span> →</a>
     </nav>
   </main>
 </div>
@@ -310,6 +321,15 @@
 import mermaid from 'https://cdn.jsdelivr.net/npm/mermaid@11/dist/mermaid.esm.min.mjs';
 mermaid.initialize({ startOnLoad: true, theme: document.body.classList.contains('light') ? 'default' : 'dark' });
 </script>
+<div id="searchOverlay" class="search-overlay" onclick="if(event.target===this)closeSearch()">
+  <div class="search-box">
+    <div class="search-input-wrap">
+      <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="8"/><path d="m21 21-4.35-4.35"/></svg>
+      <input id="searchInput" class="search-input" placeholder="搜索全书内容… / Search all chapters…" oninput="handleSearch(this.value)" autocomplete="off">
+    </div>
+    <div id="searchResults" class="search-results"></div>
+  </div>
+</div>
 <script src="js/main.js"></script>
 </body>
 </html>

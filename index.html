@@ -27,7 +27,7 @@
         <span class="en-text">The Last Human Moat in the Age of AI</span>
       </p>
       <div class="hero-badges">
-        <span class="badge">9 Chapters</span>
+        <span class="badge">9 Chapters + Glossary</span>
         <span class="badge">Bilingual 中/EN</span>
         <span class="badge">Cognitive Science</span>
         <span class="badge">Thought Experiments</span>
@@ -54,7 +54,7 @@
 
         <a href="knowing-unknowns.html?lang=zh" class="chapter-card">
           <span class="chapter-num">02</span>
-          <span class="chapter-title">第二章：知道自己不知道什么</span>
+          <span class="chapter-title">第二章：知道未知</span>
         </a>
 
         <a href="art-of-asking.html?lang=zh" class="chapter-card">
@@ -84,12 +84,17 @@
 
         <a href="metacognitive-os.html?lang=zh" class="chapter-card">
           <span class="chapter-num">08</span>
-          <span class="chapter-title">第八章：构建你的元认知操作系统</span>
+          <span class="chapter-title">第八章：元认知 OS</span>
         </a>
 
         <a href="future-of-cognition.html?lang=zh" class="chapter-card">
           <span class="chapter-num">09</span>
-          <span class="chapter-title">第九章：人类认知的未来</span>
+          <span class="chapter-title">第九章：认知的未来</span>
+        </a>
+
+        <a href="glossary.html?lang=zh" class="chapter-card">
+          <span class="chapter-num">10</span>
+          <span class="chapter-title">附录：术语索引</span>
         </a>
     </div>
     <div class="chapter-grid en-text">
@@ -106,42 +111,47 @@
 
         <a href="knowing-unknowns.html?lang=en" class="chapter-card">
           <span class="chapter-num">02</span>
-          <span class="chapter-title">Ch2: Knowing Your Unknowns</span>
+          <span class="chapter-title">Ch2: Knowing Unknowns</span>
         </a>
 
         <a href="art-of-asking.html?lang=en" class="chapter-card">
           <span class="chapter-num">03</span>
-          <span class="chapter-title">Ch3: The Art of Asking</span>
+          <span class="chapter-title">Ch3: Art of Asking</span>
         </a>
 
         <a href="attention-as-currency.html?lang=en" class="chapter-card">
           <span class="chapter-num">04</span>
-          <span class="chapter-title">Ch4: Attention as Currency</span>
+          <span class="chapter-title">Ch4: Attention</span>
         </a>
 
         <a href="learning-to-learn.html?lang=en" class="chapter-card">
           <span class="chapter-num">05</span>
-          <span class="chapter-title">Ch5: Learning to Learn</span>
+          <span class="chapter-title">Ch5: Learning</span>
         </a>
 
         <a href="judgment-gap.html?lang=en" class="chapter-card">
           <span class="chapter-num">06</span>
-          <span class="chapter-title">Ch6: The Judgment Gap</span>
+          <span class="chapter-title">Ch6: Judgment Gap</span>
         </a>
 
         <a href="cross-domain-synthesis.html?lang=en" class="chapter-card">
           <span class="chapter-num">07</span>
-          <span class="chapter-title">Ch7: Cross-Domain Synthesis</span>
+          <span class="chapter-title">Ch7: Cross-Domain</span>
         </a>
 
         <a href="metacognitive-os.html?lang=en" class="chapter-card">
           <span class="chapter-num">08</span>
-          <span class="chapter-title">Ch8: Your Metacognitive OS</span>
+          <span class="chapter-title">Ch8: Meta OS</span>
         </a>
 
         <a href="future-of-cognition.html?lang=en" class="chapter-card">
           <span class="chapter-num">09</span>
-          <span class="chapter-title">Ch9: The Future of Human Cognition</span>
+          <span class="chapter-title">Ch9: The Future</span>
+        </a>
+
+        <a href="glossary.html?lang=en" class="chapter-card">
+          <span class="chapter-num">10</span>
+          <span class="chapter-title">Glossary</span>
         </a>
     </div>
   </section>
@@ -181,6 +191,15 @@
       <span class="en-text">Cognitive Science × AI Research · Bilingual · Narrative & Thought-Provoking</span>
     </p>
   </footer>
+</div>
+<div id="searchOverlay" class="search-overlay" onclick="if(event.target===this)closeSearch()">
+  <div class="search-box">
+    <div class="search-input-wrap">
+      <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="8"/><path d="m21 21-4.35-4.35"/></svg>
+      <input id="searchInput" class="search-input" placeholder="搜索全书内容… / Search all chapters…" oninput="handleSearch(this.value)" autocomplete="off">
+    </div>
+    <div id="searchResults" class="search-results"></div>
+  </div>
 </div>
 <script src="js/main.js"></script>
 </body>
