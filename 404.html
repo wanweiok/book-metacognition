@@ -2,23 +2,109 @@
 <html lang="zh-CN">
 <head>
 <meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="viewport" content="width=device-width,initial-scale=1.0">
 <title>404 — 元认知</title>
-<link rel="stylesheet" href="css/style.css">
+<style>
+*{margin:0;padding:0;box-sizing:border-box}
+body{min-height:100vh;display:flex;align-items:center;justify-content:center;background:#0d1117;font-family:-apple-system,"Noto Sans SC","PingFang SC","Microsoft YaHei",sans-serif;color:#e6edf3}
+.gate{background:#161b22;border:1px solid #30363d;border-radius:16px;padding:48px 40px;max-width:420px;width:90%;text-align:center;box-shadow:0 8px 32px rgba(0,0,0,.4)}
+.lock{font-size:3rem;margin-bottom:16px;filter:grayscale(.3)}
+.gate h1{font-size:1.3rem;color:#a78bfa;margin-bottom:6px;letter-spacing:1px}
+.gate p{font-size:.82rem;color:#8b949e;margin-bottom:28px}
+.input-wrap{position:relative;margin-bottom:16px}
+.input-wrap input{width:100%;padding:12px 16px;border-radius:8px;border:1px solid #30363d;background:#0d1117;color:#e6edf3;font-size:1rem;outline:none;transition:border .2s}
+.input-wrap input:focus{border-color:#7c3aed}
+.btn{width:100%;padding:12px;border:none;border-radius:8px;background:linear-gradient(135deg,#7c3aed,#6d28d9);color:#fff;font-size:.95rem;cursor:pointer;font-weight:600;transition:opacity .2s}
+.btn:hover{opacity:.9}
+.btn:active{transform:scale(.98)}
+.err{color:#f85149;font-size:.82rem;margin-top:12px;min-height:20px;transition:opacity .3s}
+.err.hide{opacity:0}
+.loading{display:none;margin-top:12px;color:#8b949e;font-size:.82rem}
+@keyframes spin{to{transform:rotate(360deg)}}
+.spinner{display:inline-block;width:14px;height:14px;border:2px solid #30363d;border-top-color:#7c3aed;border-radius:50%;animation:spin .6s linear infinite;vertical-align:middle;margin-right:6px}
+</style>
 </head>
 <body>
-<div class="landing" style="display:flex;align-items:center;justify-content:center;min-height:100vh;text-align:center;">
-  <div>
-    <div style="font-size:96px;margin-bottom:24px;">🧠</div>
-    <h1 style="font-size:3em;font-weight:800;margin-bottom:16px;background:linear-gradient(135deg,var(--accent),#a78bfa);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;">404</h1>
-    <p class="zh-text" style="font-size:1.3em;color:var(--text-secondary);margin-bottom:32px;">这个页面迷失在认知的迷雾中了</p>
-    <p class="en-text" style="font-size:1.3em;color:var(--text-secondary);margin-bottom:32px;">This page is lost in the fog of cognition</p>
-    <a href="index.html" style="display:inline-block;padding:12px 28px;background:var(--accent);color:#fff;border-radius:8px;text-decoration:none;font-weight:600;transition:all 0.2s;">
-      <span class="zh-text">返回首页</span>
-      <span class="en-text">Back to Home</span>
-    </a>
+<div class="gate">
+  <div class="lock">&#128274;</div>
+  <h1>404 — 元认知</h1>
+  <p>This content is password protected</p>
+  <div class="input-wrap">
+    <input id="pw" type="password" placeholder="Enter password / 输入密码" autofocus
+           onkeydown="if(event.key==='Enter')unlock()">
   </div>
+  <button class="btn" onclick="unlock()">Unlock / 解锁</button>
+  <div class="err hide" id="err">Password incorrect / 密码错误</div>
+  <div class="loading" id="loading"><span class="spinner"></span>Decrypting...</div>
 </div>
-<script src="js/main.js"></script>
+
+<script>
+var ENC = {
+  salt: "eF2iFNYsvvhRC4WyS4087g==",
+  iv:   "ifVOkWYjRSf7a9Ps",
+  ct:   "j2U7GW/X9iiSyUpUJEzv6tZpB0F09m5uPafM2SQ2Kj4KMR7ICAzlNRJ6vKLIOqO2F46E86R8sn62UWHKoWWLyMHwWDgVyVCA8cD5XqQ7HqGsHLRgVi2jlJzVEZY57ycwQTHakK5t8Gt3/3ULipJ0xMCoH6lc+mUMKAOoKCD6Cu6odObx5k3YM6hY4MYgEtl//TIIlGKfV00FSMiboU5Jh0JNAqvuAltRmEil47KwdB0NuAInT1KIUWrq9uuzC8WP6NZhobA++df3g7Ng0naJL7+kfjRMIYFwik3CG6jIz8OaxVzi64Fkqhse3RkUvaK32QoMzRnro+TZeBonlboY9aoe6+RPqv9MgFDVwEvAPTJd6GBZW04IAffyVG2PVsllB8mE2121c8VrrBxB8+ZLKhIGb6iLT435pf3GqsrM4f0wm6lVSb2mLL4y1/UhDCtZgoedjgJDPTz/+Gp9kODie3UE83BtBBvZsZg9drib7fX5nxVf5DOh+XdG2jeivjI1cM33IBvqMDWwmT6ihLUzAe2SXLXf6oPtQ9LG6bLm11mWPFV8lHBe5sVkDc6VZT6K867mJWfjCFjidkfpgSWxotZVot8jSC8WmJgr2oCla64kruPFiiE166GrKxblg6+qwq+dPzlqlyiliuZoRaULfStj8acm8sozYfZ/naykIisopIq45cjWuZuQiCradWnGldfy/aGUeWqg9YtlukvxVKQzF4dEWY54YnI0eROdBHyRfXyL0Hz07eDFGZaYsnvnE1T5kH/gzBxjGgVwR20J6VB6kJxDJdDzbwWEQrUzCFYdfdpIGlag3dUM7gDHqgt/HLZghf8EFx6Miaq8m1WAdZ5dDevT+KEWZUuJ1B9Ghs8VsQB8TeqJjHmcBSFUScrJTrrNlwzATnajKgkeQW2wLY8s4FJJ0ZG14xbc2aP12sySzNipC2/dBFL3GESU5hqSWqZqBZE+N9fbHOP6Ta6ljVcakRpCLPGDu9k98D14kTvfIAabbpRQQ4REU4XWfMtLekkhZdkvSLKTPqZA3KtxmzXJk/cBG60yejZkj0D9CTmNwBj7GQySUC7VCYfglbFepFdxtLyhVerZ9+PWAdX9xOvBetFHchSBnoDFrs+k2Pz3QPQotSaCMdRbwJT5aywAXi+TyHrXMQe6QmzsYBcZ9wjm62m0IKwECYZLANbOoidhov2jA65nGaT9dqwbzhi9+iyQX1CiEuyNNBsSp7cvv9/yeKukBMKl5uO7xQjlfWqrubJksCstfnvsahdXf+PCY9OBJjbZqK4B0sKoSkZF04VA310ECb3cwWkJxoa3rkvSWscga+KmIeIOoXw8y4xdp5jnLJLX+9hiE/ZVZOXfjzGZfxLQoY7E0WsMKCIDO6MMUNO07q/qF/mi4It1IqqhMLqc6+ZIqxuayCt3R2foezcQSdSOwzR1SO+YbDxT6G0IqCunUYQXseSCuyZr8/Iu6KE0eNgGRYjUrPrdp5GWmFl1Z++/7rTv3d9v6Xsen6kzWnXnMsZSaKLbyZ5TyDb6b+g7zukGcfg9Rs6PX2yw+Cd09mEU0jmEQ+DxG5zj7dHZaD/okZAfcOID+lX2r6yhxbUgsoAc/h5NZcLgSF+mCKg0hxdmE3saMc+OtMTXc7jPmiMZZqtkkghc7aczC2mYxGU/ernmDEKWLfty9BXa7GysayOE8Boj8PgGtbRf8/Hf0KQBaOELPCuXYrC+txI1"
+};
+var ITER = 100000;
+
+function b64decode(s) {
+  var bin = atob(s), arr = new Uint8Array(bin.length);
+  for (var i = 0; i < bin.length; i++) arr[i] = bin.charCodeAt(i);
+  return arr;
+}
+
+async function deriveKey(pw, salt) {
+  var enc = new TextEncoder();
+  var km = await crypto.subtle.importKey("raw", enc.encode(pw), "PBKDF2", false, ["deriveKey"]);
+  return crypto.subtle.deriveKey(
+    { name: "PBKDF2", salt: salt, iterations: ITER, hash: "SHA-256" },
+    km,
+    { name: "AES-GCM", length: 256 },
+    false,
+    ["decrypt"]
+  );
+}
+
+async function tryDecrypt(pw) {
+  var salt = b64decode(ENC.salt);
+  var iv   = b64decode(ENC.iv);
+  var ct   = b64decode(ENC.ct);
+  var key  = await deriveKey(pw, salt);
+  var dec  = await crypto.subtle.decrypt({ name: "AES-GCM", iv: iv }, key, ct);
+  return new TextDecoder().decode(dec);
+}
+
+async function unlock() {
+  var pw = document.getElementById("pw").value;
+  if (!pw) return;
+  var errEl = document.getElementById("err");
+  var loadEl = document.getElementById("loading");
+  errEl.classList.add("hide");
+  loadEl.style.display = "block";
+  try {
+    var html = await tryDecrypt(pw);
+    sessionStorage.setItem("book-pw", pw);
+    document.open();
+    document.write(html);
+    document.close();
+  } catch(e) {
+    loadEl.style.display = "none";
+    errEl.classList.remove("hide");
+    document.getElementById("pw").select();
+  }
+}
+
+(async function() {
+  var cached = sessionStorage.getItem("book-pw");
+  if (!cached) return;
+  try {
+    var html = await tryDecrypt(cached);
+    document.open();
+    document.write(html);
+    document.close();
+  } catch(e) {
+    sessionStorage.removeItem("book-pw");
+  }
+})();
+</script>
 </body>
 </html>

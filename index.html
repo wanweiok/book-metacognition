@@ -2,205 +2,109 @@
 <html lang="zh-CN">
 <head>
 <meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="viewport" content="width=device-width,initial-scale=1.0">
 <title>元认知：AI 时代的人类最后护城河</title>
-<link rel="stylesheet" href="css/style.css">
+<style>
+*{margin:0;padding:0;box-sizing:border-box}
+body{min-height:100vh;display:flex;align-items:center;justify-content:center;background:#0d1117;font-family:-apple-system,"Noto Sans SC","PingFang SC","Microsoft YaHei",sans-serif;color:#e6edf3}
+.gate{background:#161b22;border:1px solid #30363d;border-radius:16px;padding:48px 40px;max-width:420px;width:90%;text-align:center;box-shadow:0 8px 32px rgba(0,0,0,.4)}
+.lock{font-size:3rem;margin-bottom:16px;filter:grayscale(.3)}
+.gate h1{font-size:1.3rem;color:#a78bfa;margin-bottom:6px;letter-spacing:1px}
+.gate p{font-size:.82rem;color:#8b949e;margin-bottom:28px}
+.input-wrap{position:relative;margin-bottom:16px}
+.input-wrap input{width:100%;padding:12px 16px;border-radius:8px;border:1px solid #30363d;background:#0d1117;color:#e6edf3;font-size:1rem;outline:none;transition:border .2s}
+.input-wrap input:focus{border-color:#7c3aed}
+.btn{width:100%;padding:12px;border:none;border-radius:8px;background:linear-gradient(135deg,#7c3aed,#6d28d9);color:#fff;font-size:.95rem;cursor:pointer;font-weight:600;transition:opacity .2s}
+.btn:hover{opacity:.9}
+.btn:active{transform:scale(.98)}
+.err{color:#f85149;font-size:.82rem;margin-top:12px;min-height:20px;transition:opacity .3s}
+.err.hide{opacity:0}
+.loading{display:none;margin-top:12px;color:#8b949e;font-size:.82rem}
+@keyframes spin{to{transform:rotate(360deg)}}
+.spinner{display:inline-block;width:14px;height:14px;border:2px solid #30363d;border-top-color:#7c3aed;border-radius:50%;animation:spin .6s linear infinite;vertical-align:middle;margin-right:6px}
+</style>
 </head>
 <body>
-<div class="landing">
-  <header class="landing-header">
-    <div class="landing-controls">
-      <button class="lang-toggle" onclick="toggleLang()">
-        <span class="zh-text">English</span>
-        <span class="en-text">中文</span>
-      </button>
-      <button class="theme-toggle" onclick="toggleTheme()">◐</button>
-    </div>
-    <div class="hero">
-      <div class="hero-icon">🧠</div>
-      <h1>
-        <span class="zh-text">元认知</span>
-        <span class="en-text">Metacognition</span>
-      </h1>
-      <p class="subtitle">
-        <span class="zh-text">AI 时代的人类最后护城河</span>
-        <span class="en-text">The Last Human Moat in the Age of AI</span>
-      </p>
-      <div class="hero-badges">
-        <span class="badge">9 Chapters + Glossary</span>
-        <span class="badge">Bilingual 中/EN</span>
-        <span class="badge">Cognitive Science</span>
-        <span class="badge">Thought Experiments</span>
-      </div>
-    </div>
-  </header>
-
-  <section class="toc-section">
-    <h2>
-      <span class="zh-text">📖 章节目录</span>
-      <span class="en-text">📖 Table of Contents</span>
-    </h2>
-    <div class="chapter-grid zh-text">
-
-        <a href="preface.html?lang=zh" class="chapter-card">
-          <span class="chapter-num">00</span>
-          <span class="chapter-title">序言</span>
-        </a>
-
-        <a href="the-inversion.html?lang=zh" class="chapter-card">
-          <span class="chapter-num">01</span>
-          <span class="chapter-title">第一章：倒转</span>
-        </a>
-
-        <a href="knowing-unknowns.html?lang=zh" class="chapter-card">
-          <span class="chapter-num">02</span>
-          <span class="chapter-title">第二章：知道未知</span>
-        </a>
-
-        <a href="art-of-asking.html?lang=zh" class="chapter-card">
-          <span class="chapter-num">03</span>
-          <span class="chapter-title">第三章：提问的艺术</span>
-        </a>
-
-        <a href="attention-as-currency.html?lang=zh" class="chapter-card">
-          <span class="chapter-num">04</span>
-          <span class="chapter-title">第四章：注意力即货币</span>
-        </a>
-
-        <a href="learning-to-learn.html?lang=zh" class="chapter-card">
-          <span class="chapter-num">05</span>
-          <span class="chapter-title">第五章：学会学习</span>
-        </a>
-
-        <a href="judgment-gap.html?lang=zh" class="chapter-card">
-          <span class="chapter-num">06</span>
-          <span class="chapter-title">第六章：判断力鸿沟</span>
-        </a>
-
-        <a href="cross-domain-synthesis.html?lang=zh" class="chapter-card">
-          <span class="chapter-num">07</span>
-          <span class="chapter-title">第七章：跨域连接</span>
-        </a>
-
-        <a href="metacognitive-os.html?lang=zh" class="chapter-card">
-          <span class="chapter-num">08</span>
-          <span class="chapter-title">第八章：元认知 OS</span>
-        </a>
-
-        <a href="future-of-cognition.html?lang=zh" class="chapter-card">
-          <span class="chapter-num">09</span>
-          <span class="chapter-title">第九章：认知的未来</span>
-        </a>
-
-        <a href="glossary.html?lang=zh" class="chapter-card">
-          <span class="chapter-num">10</span>
-          <span class="chapter-title">附录：术语索引</span>
-        </a>
-    </div>
-    <div class="chapter-grid en-text">
-
-        <a href="preface.html?lang=en" class="chapter-card">
-          <span class="chapter-num">00</span>
-          <span class="chapter-title">Preface</span>
-        </a>
-
-        <a href="the-inversion.html?lang=en" class="chapter-card">
-          <span class="chapter-num">01</span>
-          <span class="chapter-title">Ch1: The Inversion</span>
-        </a>
-
-        <a href="knowing-unknowns.html?lang=en" class="chapter-card">
-          <span class="chapter-num">02</span>
-          <span class="chapter-title">Ch2: Knowing Unknowns</span>
-        </a>
-
-        <a href="art-of-asking.html?lang=en" class="chapter-card">
-          <span class="chapter-num">03</span>
-          <span class="chapter-title">Ch3: Art of Asking</span>
-        </a>
-
-        <a href="attention-as-currency.html?lang=en" class="chapter-card">
-          <span class="chapter-num">04</span>
-          <span class="chapter-title">Ch4: Attention</span>
-        </a>
-
-        <a href="learning-to-learn.html?lang=en" class="chapter-card">
-          <span class="chapter-num">05</span>
-          <span class="chapter-title">Ch5: Learning</span>
-        </a>
-
-        <a href="judgment-gap.html?lang=en" class="chapter-card">
-          <span class="chapter-num">06</span>
-          <span class="chapter-title">Ch6: Judgment Gap</span>
-        </a>
-
-        <a href="cross-domain-synthesis.html?lang=en" class="chapter-card">
-          <span class="chapter-num">07</span>
-          <span class="chapter-title">Ch7: Cross-Domain</span>
-        </a>
-
-        <a href="metacognitive-os.html?lang=en" class="chapter-card">
-          <span class="chapter-num">08</span>
-          <span class="chapter-title">Ch8: Meta OS</span>
-        </a>
-
-        <a href="future-of-cognition.html?lang=en" class="chapter-card">
-          <span class="chapter-num">09</span>
-          <span class="chapter-title">Ch9: The Future</span>
-        </a>
-
-        <a href="glossary.html?lang=en" class="chapter-card">
-          <span class="chapter-num">10</span>
-          <span class="chapter-title">Glossary</span>
-        </a>
-    </div>
-  </section>
-
-  <section class="arch-section">
-    <h2>
-      <span class="zh-text">🏗️ 元认知四大支柱</span>
-      <span class="en-text">🏗️ Four Pillars of Metacognition</span>
-    </h2>
-    <div class="arch-layers">
-      <div class="arch-layer" style="--layer-color: #60a5fa;">
-        <span class="layer-num">P1</span>
-        <span class="zh-text">觉察 Awareness — 观察自己的思维</span>
-        <span class="en-text">Awareness — Observe your own thinking</span>
-      </div>
-      <div class="arch-layer" style="--layer-color: #a78bfa;">
-        <span class="layer-num">P2</span>
-        <span class="zh-text">调节 Regulation — 实时调整认知策略</span>
-        <span class="en-text">Regulation — Adjust cognitive strategies in real-time</span>
-      </div>
-      <div class="arch-layer" style="--layer-color: #f472b6;">
-        <span class="layer-num">P3</span>
-        <span class="zh-text">评估 Evaluation — 审视思维质量</span>
-        <span class="en-text">Evaluation — Assess thinking quality</span>
-      </div>
-      <div class="arch-layer" style="--layer-color: #4ade80;">
-        <span class="layer-num">P4</span>
-        <span class="zh-text">规划 Planning — 设计认知方案</span>
-        <span class="en-text">Planning — Design cognitive approaches</span>
-      </div>
-    </div>
-  </section>
-
-  <footer class="landing-footer">
-    <p>
-      <span class="zh-text">认知科学 × AI 前沿研究 · 中英双语 · 叙事思辨</span>
-      <span class="en-text">Cognitive Science × AI Research · Bilingual · Narrative & Thought-Provoking</span>
-    </p>
-  </footer>
-</div>
-<div id="searchOverlay" class="search-overlay" onclick="if(event.target===this)closeSearch()">
-  <div class="search-box">
-    <div class="search-input-wrap">
-      <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="8"/><path d="m21 21-4.35-4.35"/></svg>
-      <input id="searchInput" class="search-input" placeholder="搜索全书内容… / Search all chapters…" oninput="handleSearch(this.value)" autocomplete="off">
-    </div>
-    <div id="searchResults" class="search-results"></div>
+<div class="gate">
+  <div class="lock">&#128274;</div>
+  <h1>元认知：AI 时代的人类最后护城河</h1>
+  <p>This content is password protected</p>
+  <div class="input-wrap">
+    <input id="pw" type="password" placeholder="Enter password / 输入密码" autofocus
+           onkeydown="if(event.key==='Enter')unlock()">
   </div>
+  <button class="btn" onclick="unlock()">Unlock / 解锁</button>
+  <div class="err hide" id="err">Password incorrect / 密码错误</div>
+  <div class="loading" id="loading"><span class="spinner"></span>Decrypting...</div>
 </div>
-<script src="js/main.js"></script>
+
+<script>
+var ENC = {
+  salt: "2gl1XrOARQXsI+0f2oPTBw==",
+  iv:   "zkyC+E9E8zo9DgAg",
+  ct:   "ZcSOVDVzWADLNOouFwOX4G/fhbUpf4jkCmFLBb1tWfxkSq0DpjMJHx5rx9toikTy6oVTxmu6w44JC2R8i/56XYROTXfEUnp6b9wKQEdqKhfxVI+goCzGLsl7Hx2hj9bjytd5PMblihXel73Cknw4BYbxKzQjJAjzJcY09XpRFluMV0dpuf3dEDgNDNXaipFnq50FZvKse/Qcj7heJ7ErWN46nPA5rD8xrZ2fbFoqjw5RbaKAVpp7oIh2HOdKx4Oyw4eNO3wayrLJiUoktKK5oaRjeQvM24EyzGCZX4TT+4cgDkuIs8xLm7QHSCwi+L9y6VmxRUF2YGokHLdk9fPHJ4LLCjT0Zxlf6EznmOggJYE5B3/ViMLMMlJCd0sSkwzbNK6aNh9syrVTLlmDEPOnGBZhqipkeTO4woFSnjSAxxwVHxE5+GaZ7zi0SWilSi6k/rnxNuPS6zl9RFEEx/nStq4xzSjhpW2UvLqghUTx84Jo+A/RyczGsLZwozcDXd03OvoFUtqLvBFcP/+vX9HOnrRUGxLuDBVOZjaamWyDHNjoAXDeVeRpiYERPJSYfZqGgsJH19wA3A6DvdBdmg3ja1CgLV/bo2gcZS2Sa33eW801pfvvUi/QUBTeOAtVvDgnNUUtgPOEX3M2aFLgsUAkXlKY+Mu2EVCCpDfr0+5Q0gxncilStFAyjXFEzaIAei+PJtndEn5d9KjsqirlG8fNqd8N6lYpYumCDEPOcpmCazvJa4j0hKmZfz3GQ6F6qq7OKrmuHAETRwhAXK15n/lrYXrMqRdIDsxmYNKdaw0Gf7++fxL2nYq9Mt0fQ/CaqlfZBT8MlqWxjq+KTZQfr/NgqOuRvnq1tJXEtmpttEyn9vLh08QfFZeNcE588omoRIrU2A37OOzUhH7NAi8O1Gxe6gl8p+ogg8+6+S0oKkWNRl35otWF1z0v5WJ6aK+ce6OzKCXi/t+m+Z+sLX2MTHZa6jxDdDUwpdPPEUS8i45eeAK2tMBR8mvVGMMRZw1ortgf5qERzoeaUR+l0GJ8HCOVm3DonyjYZ3eFk6sQ0/toye3/9pij9rMy+aACL2Zp1uhNdAqtcRbYoHZMRIW7Cu+ndHVrO3SC7HvgulxIL4f1LOdWB+Dtxev6W6bgbFZ75AfYq6Gd7NcaoOvxyNMeRKqm/SeHdjYXxuqdL8JPqbtA0iuzLYaM4uTISFomTm7bt5AS/F7MmuK6DoG2KM6Y51i8mr2iIaUmX2ujQkOhAAtiNXM+RY7ymAZozP/nnzzLjPEQfvDIByVUwE8LqipSxchFLRU1kwDLBkeVkhUvO+SQMz3GucnftdTSkFnL4bTOJ/X/EBh19XQT1HDxNZZuUImdAdCcQU1fW9lSv/aDr+09PXqa8ByVYCZ6KAfzEMtLlp0cGcMEs0iiBgLST5FSg2y1FWzXk1BRBtUtk+Hg9BkmEglMiJd3mu/A0gizmuEx+QkJVMHDmiI6l/JMLnQrb6WhcYNLMqXaW8ZBbStDif4UdSV1P9Doa8GZwsROlY3mHniwxG2I98synkSVFGykoZuwWB6uC2ma+QmTMtGcg2NHIjeueFJuVunq+VM3aUmubQpg3StIYiQFn+b8H6vua29061/CvOutChaE3dNs4P5MyqNjkWQW9S9WR4L4UgtqEUghbH/MjhLD4H74PEutO8kb9aw6wBDqw3uSQeufmVWBi5TWsV3lF4OUNAwBNjRK7j2LxKIqMHXkoMarz3t8FFC6MEWX0LkcamxhxzovKxmBRVj/DgtsS7hd8fe5M7GvItAUxSrtH4KoeyXd/5QlP4IcyNEGr+faUWsvs08Q/9+0LGYVH0nlHYCEki3Az1Zn3FsxoTlZfI4+PLd5W/6EzpWFxZmyXlkmNnLr2MwP8EKtSNSRmDEIk22LgLfqf1Qa32GYQJvnjyVJtoqpO5+/w3YUME/8x4CDf4U/Kw8Iow1UYPnbfR9JdVylu0fN0lyNHxtP92r4U3lEacBjHdT0CbEna2OgI3vj9ybFm2A+97vO9gdf46mFR8MYJfJemR6a1IOo3tqEZbzYgat8aSLkR9W9YL0Gqakwc1zj670a/jApdVMtr5XOHdfVxbpMDSAqiV1LHfXDaEsl6Iz+qdaJdpKgpBwOauFDgOkjOrxlIw/C1wwNmID5YAkNUtyBxifP66BevJLRfzBMC9vK4C10wwhnpOAvGjdxAyoFdeUOCKR6cH8pnLQTVtqaQpmZ/LvbFbLci+VEg0pjNSOq5J1PagEZYr7J5pEyUnAzoHlvjzYapmCT7E2oUbzGTd0EzD1KW9FG3ZnT/jBhIiRE+msqzkAtoyBiyFLtVhnYbnkTR4mfzxyzqOTPVPZ4tUQkAdY6Zj1bfI+3fghPLgyX4BolHE/wpqihx/cp/e2hyN3BO2xb0piNJfZ4NckUpnmxQaGJo6aBnsmy4k9M8Og00lTGS+qMSp055/zr8E14B/p5ZhykDATTnfKo0x1RLsR3irx/0XjGruFK5un2fcEeaYaXKG4x7xXKzffffGXini0oiK9z2f+Xe5Pqf/zSDMGwX4FHDLozIk/J7bDNJXb7K7MVDsZjrHmnSCBLrNJXcBQURktPyCXNaZyhTY4jkEvIOKqyWW7gpN7X/xViEgFAIpERzw9QHTbk0M7fHm+eCAUvZROd3YF1StKCc7RwT4XWWOMBGs7j0SobueTOE12ArBBJLBlnBejtVCYYj6cbzgCFUUxUHxaTF8yCoyTZcWKh3HSPdh+YKA5fHc0/vxexna6TH/r7sZYovYE9+6myrm+8DQKqcl299FN5hq8RuKLaO0g+cFzXOOn05eCSFY1XOFFJw8Ru2NMd91ULmgSRX3WGoJkzQH6UlBZvciqmnKOCgmqVcd831gHUgVuh7i4Czmsexaqcamr1F6ub8SNHHNMaH2t8BNBlUF8BytHTKjnLk3jhPKdYZ5kg6h06ymeqwuV6BnWDWjjmsW8JyujLeOpcKIazhca9slYjunUkNqRmAN7DoGqVcTGezgbBAcz73p6SzdCkEhsJnvDuJh0J8K5TofKCuNULtJYs7gTaN/1OEqARMbrXqPw5AkGqQvfscOyshhVyekBM2RuKEWwaZBy+luozJnfk5ex8WBIk2StMtW/Ug9RQwLtayudM3TnM3y7oP7TFZ9a4OOrOS+EG5A0vi4H6/NpYUhf0XfnVzhN3tL0wEbFb+kl0aYdFC+kLRX8k78n5Sr3znoVLYQnBCm68RQOW/rJ6WFOklCKQorfYLSuoyseQQV7YsyhdEMzIALCsWrkbM9xcAZaUpBdnzBAYY6mhq+qnlNm337MZO79XzNG8IGYylu1jiWzwy1HkVYCvRuzjVrEmoKypUH2GLISCRgbHsdd0vuqsgDSUAc1vccoHQblIwlzA4yhshs7P/sX8LBhULQ9M20K7t062b19iU8OtN3DMCQuorE5RqqAFdx1glnMIymSAGJnPdIK/c8W+HfUEUONdNWjAZGhkRQlDI2gjUnGbbnLhHVkEssKRKKe/0e4qpZyV+tWBbF+swP1S3GyPYCYcO882ceaDe0YC/JKx/hZYe4XU2CUwoUb6nFuqiWjMnA2Glq95thZeIZ0jRCxJpoK59Rqx3Gu0dr2jO3aTfM/GbgI48H/AnWavOLbjkYYs0XvfntM40bjjnFIQMdYwWblTj1RquTTFPW1ZcxCUi+8AxKAAIMl85i4PUmL3z6/7ZA2eTENhaISEfzMUHHfYj9Wye0TWjPeq4uRMaD0M7BQl7ENpv7gvZcxVQIt2iKGE9ZVYLniK2BUXQt4jvFEZpwBHsGOefB2al21uC5VQ+dfNtXvXOZZnsqUJ9jmhwh7y5yZyt87KwV1wP0wDt3ev8YsO4KDSEUQ6Sq7E3yg3zpx5Xqf4j2GHIiu6HD7l05GpdLyNyIggf2i10B+8SqmPKKykGzMvVWY3yOasqvFUcu/RB53KlVx0LENp8C87QDD1azYfedDnFkCuYb/zh9RLpEn+Jv7XwADTJXfPWEaeL0awH6ENOHv5Tiu8lUMzZU43p3eg4nIHiOT2n0WLc9aenQ9BqGFkA4YzgXmuIJtdYZkbMeITML8Fu/kS3GIVWwWm/dOyLdbULqxcqSuHfY2mxPOeF42v51nSY430SMGHNTkP4XBxzbXzOHPw4sxlH0Orwwcf9VoiHXZsSfQuTzZK+wAYdcE6WSHk1iacNiRIIq2tayYIbIQuXU/XHBGZfHDmB7do1KnnYcAInOWtIoWDvBWaJXOg5S3IE/q92Szum6UQDQFxVFBDnQ4CgHYjMvi4PcrNS6Io6ar0fMUDsRToOMTkRMpQ43p3+Ytjj2ckGB8TkZbJYPvCsDyrBjLWm2cziXyfltvJm05wSxhbLGk/wMhRIJk31UOFd1Auh/t4dZnSZE6AYiwOYIWo6Z3t3fcxUdhhW+9YrepxmZ/1waU55UHeiJTboENHGe2tRj8LaWrQBjrTYVDuI8V8yxwYKb4eMLoyrjk+XiLs5Ht33lDsrHeOYBe2rwvDuBnN/TejgrHz0uL6UsvrykoJ456fwv1xBT0+r868Qe+jbEPJVoZKEtkBdY/Qrl39+joQIvBD+5nAk8GMtdMVUHBhQWoOfMnIOd8uh7OcASVS/9rSPwdovInkP3fg61OjenZwxBiTCPwI77siXFWUnYWohpBCsL/mnp59TnkDr+DcDrw10Re/bTEj8l68f60wofmNeMvnJPmUijyNyce5SFZNpgPNS579UPvbUvKaKgsSicbKmVpCOgehLmK5WaqZddrgKv/N6wOmXJQDMYyeTjlm+pOklcgfvmFLXLlTVnCdfnN1FZwLNm+sC3oCs68/1d3EJZzJU8uHLBnpiw6mBT6bMX2pb92YQXxjEan+y4d0PSVhvsQ9r65lNHxgui993IwgamxjKHTvjPoaEsUW/GDS7ANQh4G3dN99YJqmElgidLpuHc5+ozHvlTbfkEjjN+G52k0UWiZSQ8yBgXAlT0L379hIyZIB8D84IabmXkAToFNdUEypDiVRU1lmA9yXM2U0v8s7PDRDhkX4gm+wXwqpT3IdCZEeVgVjBgM2uF8r8FRKK3I5WrMc6fbnLljZsTKZ61LAm+Dn1WVZb4meVCK1JxoQcUN1mylyou8kLAFqGUnCnN8z0bLlUtvLbfnU+ahMem0WNadacaLe3B5rjiYUfbouAlDa1RUetX0lWW0V7lWsYapGdBjqDM30XqbAirGvtOWeuIOZcnicTtGm9BuXnSudE3W3mR6WEZLwzDNrjLt+a5/ZGI9aAuNoBDRPLdilL3etQMO90zOHk9qOIqtoThhzA/AU+Vbq+alc6qwjrTs8vUSkVf2wUzuv6b4UWMV5XTlUAXugnAPzYmOMZ3WjfQ8KKXKC/PY2SWMr9EBUO4VeIST52nW7mjb8OPCgeslrbJ7cnasuuMF06lA2Ayganaodu2xIpHCAfJwfXjIcPaK1BZ735NLq91KjTD0hzMrUrBYXkatDqIHTByxydZyz0TipeFMMbwAvtIaPlfR6/mfishCF5TzTNHHiiZ5uFJdCGvIYpByu4zA8rYfOxm9tjK8P0XGyC321d9eCjDxs/5CjFPIVAlqVIsZjjsdXp5Xrk1sXMwXiV+e1aq/l10vuJg9YipgcjIYiiRAAvgugZM+U5SWoDSiSex6pZhQLZFiJ9f4iDWwRX0IhMuhEf+b7k6SOKXtJJUJ5MKL8tMDJOSwx1vQhaACmdpWsPJ+w6D3gu7ajV48I0llNPOEQvHsfPGeKC7g0UKGsmtsVzYIJCpyF2RJyJT2Pd3GUB3pzVJDUcd30Hz0QzHCvhtByoHmJXLX+iu0+W8dBOK4QuhrAD+f6Vt92qNRkvsE1Rby253iA8dBA0ENyMlnLM4TK426wp7snVHytk369HawnYyAMT0BTxENiFEYgLpYNovsupRX/yWW0sob0uS20TG7fyHDM+qcTi4+LTAYTeZ5ZADZ+xIYDXjyOAWXwwS5mP0dJYSOsRMNCsCMKJqaQ9+dBoZoaqk+r7Gh7qVcvLjAlwbF9a3cd//L8+c0gZg2QYmqCUuDrZ1MrjZ0sMOzq9GRHM4eyiQigYInGKkr/HiJeYN2L4DwyWDMfSTLfYAE0xV0FPiJXDG40Es5QudIn/X0uszexEl4CSz1hV7f19oFWShZ9JeXjm0Ui7vSi6wo57U5CGDeXeAhab5U/ZPWABBdvsyegRfdTLdxVMZbJPJm5nSGNg8O6/gTZ26HB9eoxb4PRX3dCPkFF39zAWscvySAsgev+vqakiVm2DHDTaqZsuOeYBIdRBZwBZztfWOc7OzS4xkiGF4aXGgKVgVqNm6J9KOrgpuFR54A3Vt1GgF2h+IgJoWD2jWiJEMruoayisv5g1WtKZ4ijGLlSRGJUwz3hRLI2sxwMVclRGUNPAOaugnrjPW19trkixzja97G5iQpjs7HEioY9uAlxnccFzhtIxg31+e9PfoQixNq2WNQPyNA1/wE8iWbsAAJoifoYAW8RJP/gH6z9+FL1EbMvqPDeH4cxhLN8niDazNt2wYG16OHSVjOl5ajGL4bCg4ypkNH7GeFYlmTnn09T4nHw1zmIerbG5+QZvWqsdJd107h8eoUOXhMOPoFt+Qz2161YQ+S2TYZQyIAh/pHoZEZl7ujc+UvwFXHlhg4oqQ0orHwx4iU2fUayfBy+UqxQCots5SD3u/6XoQNdHqMRrA55VHUqRit8CLv5TiVV4ep8bilHSflJ0nS2O8DmLcNpjsZgPPMPOpVCW42y2whunFls+4btdF+FkvVXRU8AVcO0tJEiSZ0n76NxZ5T8JwAAqa9pG12wzX+oGXUtZV1ukteNT7r0OE3a7a87NlvEFwkZEhr7Tt4K+MmjWIGefy19Efp17J68etrNY+G6uFzcF3R/Vu4UEIyj4tbN4/VIcoZfSo5L629TIor3fqHiX7GoXt7K0fmtDOiV8UxNqKuhVH94flOCocpSfrJRRY+QBzy+2CaB8aOplMjAW9xcUdKQAaRrCldNHfdlmNH5kPjJuIQ0IYzwxQCEUCSSGB98lbu52iaW56hCdoZadHEdaCPi5bjclJb5qKC6t2xVqCAUi67OBCnm06N04gfmP4LOioIQnrx9opyjOcq8Ap333WH7iemT4c2X7jJjkKTMYulX0Tz03mZOSlh2n1d0S84SJiw/cyljKDdYcbRTOJjZj5rGBefA87AN0llzPvz45IgoyKekoUBaz31PeyFWQ9IyHvA+TP0LE4uqYH9Ea1TSJfvKelSWVmj5NoayZ7kOaoLMrMMPQPC1AcDH8+SjmWN8Xdle0ycf27tzOaxBp3KnTfzvL2cvv+22pkTOOvKn44e+pI3c8+MmGURK4N6W03A9Wk/NMkiahSTQbnHomfQIinKMXPg1z6DvAi4VndeXSsgmoeIeFpyEQG+RsZKxoKpD7SC+UtvXA/vy1Thh/y2s6oMyw591BwuYDMp6u3RDhJ2ZIjnFN+7ObpBHhEPWNww1iM1irLDZ5oiO73Oj5WYIn/PKBxk3rSEIKLOs/QPAy6hzdrj2DvSnneGLnDkePoAaQ64TCqPWow2Ooy3sMPTrodBXt5wnldZ2pXrFS2dKipGCQjW5eo+1LuhW0FtCRpMAwX2n2YFu2Q2PJZPdp3PMpmeS8fY3gwmcbxEURB1457ELNkW4tbrNGk+Y8ndvWeWnnnYykXl5yqD1tME9pS/WJVKwY1UHspJQanAcEr8V3WY7oFjgOlGDcLHTQlYgcK0qaMrAzsNJoC6SMkoKEiQsTOb1MNGeYpXfIlN8l9qifdN/B+AU1QXOWsRdmvxbJQLVY+wes5u9hLUN4XFGfmSzFLBHlqM4ndt001sLb3LWU5S+7C8TZZeSpiM7PXyCLFCvBGonN4VBd7KS8MNVJmEMNWV58uA4mKpXXaBzFSjNTLKwA1sXRdQglCstmvidbRWgFSYh5uxo9KVEvHfUWTadUlf44Shn6uuou478TN6eL0R9kkjYhU2XAYYrA02a5BjJlgm6uJRzXkyF4HCukpjwsOBV2WiMtAojukzWVi/NeRftkvklLiKg9S5ownsQE1uC7JbWrq5BKSVU5QUn78S8T0ISzf2LSWKEeJQUOtHH3E88x5umHJ0VVtHk5j6Mm+xG/UKF5JmLq7qE2BRL6UJqYCxm/L3J2AeDg/ShgCXMBm1exGD1bRHxqTMhmmFEf6P/XYV4p5MDcI7Ap0+TgODyK4rIIwZZjF+UW1O/E9HT0jlPrWjgE//hXj283dpLX+6xwPyPG2Z1IqOiiDCUY0Lqeptm1R+c5J3N+W9VC6OfqxpHEwiwH2iLyaz5jqUsCeOq/Sf/RQwuy+PTLZgfZAq1ANfIaj5KfXmvw8FPOgY+rPMin+suGx/M8+WMgrkn4R1NljLEp/DTnMgkWePOLhIKV1fSuOUm8ijhdbvSj+k4Ug84yZv6PBxi6VQHKd9eUWizz9WTSWIz9MEy8JQXOHqupf+icfjXavnNDLBB/Pu3XiopyxUgLqsqktSWKfqpIgEQzUntSth2FSAHGFaEjwMzf6jMAzbtFmO83GOv5uCZj0KETV0BcysK9sxdWMGfPmdMdHLRGBIxtueM6x6ZzZojndaHuQDxDq0AkqxXY26d4sLrBiyQLbor3bBj8zuCjRMRf4YiW8H9T+TBAHtoFbPbp4mK61HRT6rBFYscrs4OLIExCOoVEu52sLlsfE0kXkGRXHJHF4JP+9RtchwK7U+eoi8/yMjrtqR3Q3oeSimGI9SHTleClEN+xU+jePDDBGShuQ9cKS+bsgEbjzMs3D3ePhXt78ees11I0Zwcr8eEGh2k5GhascHWExTY2yCTXNHwtW29yNPd9BlwsNx2Yp1hsZYQJuopmAF4gtbWeJhXJMnTH4Nd1ttrASFtlbxm5BJSFGJlqfCUNoHEsoQtRH4pW3G5xvRDlJEBDkycXEGyIXj2LRWZFhYLxtG5vTGfFPWCOSIF6kOpQ28m35MvcmQ+4nzEDM3ituiq7ttythdHNIvVHBI1G9TNBozz6YBPpQ4hwly85/Q17BKYxq6ZrHAizFyUvGJIdWG1EzRgPrQEoJRWKS4j6eFIWsDJ/lKuMoww/vI8zoL8QZruJBIlaJ/s4Fld4mUlSKj+4Zc8IWdlWXQ0YkoPIEVZGyQn0I95Qc/Pplw37guapSOojdvaWM8WF7ti/j63jmfeRFJlgLUDLYYQzKKmP1N0nQ9KwcIQlbMyLkEQBR8xObqkYFV7ZhnoC9DzGavoqcceu9yGtPH2ZUiUvmw0uyv9P5TlXIu2aAzdktYpccVVOfizvBCUhzXnImh4XPz4AHvXv1oSij1svw0bGfOZm8JDOArPmF088qrdigNc7XMxhs1jz8/d43XJ8HBjTMacTh2br22en7yP9fb96DiYmCQC551D9uHGNhjZL2gpfRP6ARUULguXCLKUzxdLF7nIbuKIfbRVGQnh1C9R0IJZOQIczxJPwPWHpvDJ1xKpEkn2IM+FmF9KrQxFUeH7IgKqkpdSjeoG6Pufitn1K2Cplm3GFFN4AqUC/Z5xQ1Js+2tQYvzksJh4zG71mQ+0Pp1t5oGgacLpVn+oK4pc0/IfUHpyf/aWIaEoN5aq061H0OH+sHISvRZrdmgecgtIm9qYdcthjyCAoVMTvjMrnP9c0RJgsYnEQNyUK2yekDsJ4OTGzH/IbFj/hHztgQK4r1F0W6yGmJHnfAkCota78KHvONXrgy6kSQ80R78qVQMtdY3bi48QtJ3y/z/ffRIeRx2Nl39y0BHG/iN/DhH+2Th4kV2ZFSi7kOnNzXferwvZNq89pUxTLHm9MOmcwpvZDMi3USP9i6G2D3MnBx3naXIbvGxwqFQk/iUxcQQI6Ebbo8eLbErp50Qf3UeqBGO2vME/d1tfbct1v10xZTwAWkvOwR9hZwjc9TmX8Xu8nfZgeSstLQHqqEeL164dCKxtv9mGPsJPqYvk95vR3n6V6cynEdXpLbzHGFx2BERbClUnkhVyWbv366jalnUTlxTVqxOlJxVqi8fqlpV26UI8THTMfu26V9MOTXO/RAQj2/U9yxMMPPJIX0u3IwDJk2Kwj6/AGQE5m+xEtNvkwp8nRr/5/+nrmbu/lpWcKdFVocctrAG2tYqqdHg5H74wsn1UQwgaxOjXpK1M+0g5NN/GpDzBi8KHielTGiN1x2gXEdrkaqhjudO72Gz5KvMLPEBpldGbG83tnadvaV854oLP80Sv8I4GbMONhRweVMaOPC8tswwb2nIDoEhNjOnWGpkJY8agCeoudk+oLbOT1XDk7uLK0mAG0bPbnrtAsAInZLESkQ0KV9HF/DN0EB97rzw4QMCkYGt/LjN36ulGdVNUHW/5+I4psKnjNh9h5BDbkKRN7Up/3diSbYhrJVW20I28AIjAXNSOwOPRokb+imL4hcxLSjqTUB8qxJtr+l1bK7uIHj64HQ98WxubFdrtwfehyAJwerVFvRXg2SeyiMmJ4Oq/RkfTvL1pGqlSJCc2HIpmybwXlT794RUYklUxB5flaOSeM4yDI0YjUQrs6QS9Gatvf03WwkmmabPXxNoEFWimOS27BiQlb3e+K10igNgwDfaSp5yxbtn9aezE6EnSiUTQ031F1snQHKNYnwptwjqtos9kXB+bug2z6ugCk+TkeAcZzAG+tpDRyJIJMnWcvBaqaBbll+5gs9cdUStc2a/0+sJZtnKyCSgCfrakI1ocE6ESuQroKakza5vgOB/hwq3iVf9qgj79ho//gl5AfA81F51sf+y5bg=="
+};
+var ITER = 100000;
+
+function b64decode(s) {
+  var bin = atob(s), arr = new Uint8Array(bin.length);
+  for (var i = 0; i < bin.length; i++) arr[i] = bin.charCodeAt(i);
+  return arr;
+}
+
+async function deriveKey(pw, salt) {
+  var enc = new TextEncoder();
+  var km = await crypto.subtle.importKey("raw", enc.encode(pw), "PBKDF2", false, ["deriveKey"]);
+  return crypto.subtle.deriveKey(
+    { name: "PBKDF2", salt: salt, iterations: ITER, hash: "SHA-256" },
+    km,
+    { name: "AES-GCM", length: 256 },
+    false,
+    ["decrypt"]
+  );
+}
+
+async function tryDecrypt(pw) {
+  var salt = b64decode(ENC.salt);
+  var iv   = b64decode(ENC.iv);
+  var ct   = b64decode(ENC.ct);
+  var key  = await deriveKey(pw, salt);
+  var dec  = await crypto.subtle.decrypt({ name: "AES-GCM", iv: iv }, key, ct);
+  return new TextDecoder().decode(dec);
+}
+
+async function unlock() {
+  var pw = document.getElementById("pw").value;
+  if (!pw) return;
+  var errEl = document.getElementById("err");
+  var loadEl = document.getElementById("loading");
+  errEl.classList.add("hide");
+  loadEl.style.display = "block";
+  try {
+    var html = await tryDecrypt(pw);
+    sessionStorage.setItem("book-pw", pw);
+    document.open();
+    document.write(html);
+    document.close();
+  } catch(e) {
+    loadEl.style.display = "none";
+    errEl.classList.remove("hide");
+    document.getElementById("pw").select();
+  }
+}
+
+(async function() {
+  var cached = sessionStorage.getItem("book-pw");
+  if (!cached) return;
+  try {
+    var html = await tryDecrypt(cached);
+    document.open();
+    document.write(html);
+    document.close();
+  } catch(e) {
+    sessionStorage.removeItem("book-pw");
+  }
+})();
+</script>
 </body>
 </html>

@@ -2,414 +2,109 @@
 <html lang="zh-CN">
 <head>
 <meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="viewport" content="width=device-width,initial-scale=1.0">
 <title>第八章：元认知 OS | 元认知：AI 时代的人类最后护城河</title>
-<link rel="stylesheet" href="css/style.css">
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.9.0/styles/github-dark.min.css">
+<style>
+*{margin:0;padding:0;box-sizing:border-box}
+body{min-height:100vh;display:flex;align-items:center;justify-content:center;background:#0d1117;font-family:-apple-system,"Noto Sans SC","PingFang SC","Microsoft YaHei",sans-serif;color:#e6edf3}
+.gate{background:#161b22;border:1px solid #30363d;border-radius:16px;padding:48px 40px;max-width:420px;width:90%;text-align:center;box-shadow:0 8px 32px rgba(0,0,0,.4)}
+.lock{font-size:3rem;margin-bottom:16px;filter:grayscale(.3)}
+.gate h1{font-size:1.3rem;color:#a78bfa;margin-bottom:6px;letter-spacing:1px}
+.gate p{font-size:.82rem;color:#8b949e;margin-bottom:28px}
+.input-wrap{position:relative;margin-bottom:16px}
+.input-wrap input{width:100%;padding:12px 16px;border-radius:8px;border:1px solid #30363d;background:#0d1117;color:#e6edf3;font-size:1rem;outline:none;transition:border .2s}
+.input-wrap input:focus{border-color:#7c3aed}
+.btn{width:100%;padding:12px;border:none;border-radius:8px;background:linear-gradient(135deg,#7c3aed,#6d28d9);color:#fff;font-size:.95rem;cursor:pointer;font-weight:600;transition:opacity .2s}
+.btn:hover{opacity:.9}
+.btn:active{transform:scale(.98)}
+.err{color:#f85149;font-size:.82rem;margin-top:12px;min-height:20px;transition:opacity .3s}
+.err.hide{opacity:0}
+.loading{display:none;margin-top:12px;color:#8b949e;font-size:.82rem}
+@keyframes spin{to{transform:rotate(360deg)}}
+.spinner{display:inline-block;width:14px;height:14px;border:2px solid #30363d;border-top-color:#7c3aed;border-radius:50%;animation:spin .6s linear infinite;vertical-align:middle;margin-right:6px}
+</style>
 </head>
 <body>
-<div class="layout">
-  <aside class="sidebar" id="sidebar">
-    <div class="sidebar-header">
-      <a href="index.html" class="logo">
-        <span class="logo-icon">🧠</span>
-        <div class="logo-text">
-          <span class="zh-text">元认知</span>
-          <span class="en-text">Metacognition</span>
-        </div>
-      </a>
-    </div>
-    <div style="padding:12px 16px 0;">
-      <button class="search-trigger" onclick="openSearch()">
-        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="8"/><path d="m21 21-4.35-4.35"/></svg>
-        <span class="zh-text">搜索…</span><span class="en-text">Search…</span>
-        <kbd>Ctrl+K</kbd>
-      </button>
-    </div>
-    <nav class="sidebar-nav">
-      <div class="zh-text"><a class="nav-item " href="preface.html?lang=zh">序言</a>
-<a class="nav-item " href="the-inversion.html?lang=zh">第一章：倒转</a>
-<a class="nav-item " href="knowing-unknowns.html?lang=zh">第二章：知道未知</a>
-<a class="nav-item " href="art-of-asking.html?lang=zh">第三章：提问的艺术</a>
-<a class="nav-item " href="attention-as-currency.html?lang=zh">第四章：注意力即货币</a>
-<a class="nav-item " href="learning-to-learn.html?lang=zh">第五章：学会学习</a>
-<a class="nav-item " href="judgment-gap.html?lang=zh">第六章：判断力鸿沟</a>
-<a class="nav-item " href="cross-domain-synthesis.html?lang=zh">第七章：跨域连接</a>
-<a class="nav-item active" href="metacognitive-os.html?lang=zh">第八章：元认知 OS</a>
-<a class="nav-item " href="future-of-cognition.html?lang=zh">第九章：认知的未来</a>
-<a class="nav-item " href="glossary.html?lang=zh">附录：术语索引</a></div>
-      <div class="en-text"><a class="nav-item " href="preface.html?lang=en">Preface</a>
-<a class="nav-item " href="the-inversion.html?lang=en">Ch1: The Inversion</a>
-<a class="nav-item " href="knowing-unknowns.html?lang=en">Ch2: Knowing Unknowns</a>
-<a class="nav-item " href="art-of-asking.html?lang=en">Ch3: Art of Asking</a>
-<a class="nav-item " href="attention-as-currency.html?lang=en">Ch4: Attention</a>
-<a class="nav-item " href="learning-to-learn.html?lang=en">Ch5: Learning</a>
-<a class="nav-item " href="judgment-gap.html?lang=en">Ch6: Judgment Gap</a>
-<a class="nav-item " href="cross-domain-synthesis.html?lang=en">Ch7: Cross-Domain</a>
-<a class="nav-item active" href="metacognitive-os.html?lang=en">Ch8: Meta OS</a>
-<a class="nav-item " href="future-of-cognition.html?lang=en">Ch9: The Future</a>
-<a class="nav-item " href="glossary.html?lang=en">Glossary</a></div>
-    </nav>
-    <div class="sidebar-footer">
-      <button class="lang-toggle" onclick="toggleLang()">
-        <span class="zh-text">English</span>
-        <span class="en-text">中文</span>
-      </button>
-      <button class="theme-toggle" onclick="toggleTheme()" title="Toggle theme">◐</button>
-    </div>
-  </aside>
-  <main class="content">
-    <button class="menu-btn" onclick="toggleSidebar()">☰</button>
-    <article class="chapter">
-      <div class="zh-text"><h1 id="your-metacognitive-os">第八章：构建你的元认知操作系统 / Your Metacognitive OS</h1>
-<p><strong>核心问题</strong>：从理念到日常实践的框架 / From concept to daily practice</p>
-<hr />
-<h2 id="81">8.1 开篇故事：倦怠后的顿悟</h2>
-<p>一位产品总监在公司连轴转了三年。她使用过每一款 AI 工具，把输出效率推到极致——写邮件、做汇报、排需求、分析数据。但某一刻，她彻底倦怠了。她请了两周假，关掉所有通知，去海边待着。</p>
-<p>第三天的傍晚，她坐在沙滩上，脑子里突然冒出一个问题：<strong>「我从未停下来问过自己：我是怎么在思考这件事的？」</strong></p>
-<p>过去三年，她一直在跑。用 AI 写得更快、查得更准、做得更多。但她从未优化过自己的<strong>认知过程</strong>——从未检视过自己的思维模式、注意力分配、判断校准。她只是在「生产模式」里全速运转，从未切换到「学习模式」或「元认知模式」。</p>
-<p>休假回来，她做了一件事：为自己设计了一套<strong>个人元认知操作系统</strong>——一套日常习惯与检查点，把觉察、调节、评估、规划嵌入工作流。她每天早上问一句：「今天值得我投入深度注意力的一件事是什么？」她在做决策后问自己：「我对这个判断的信心有多大？我过去的信心校准得如何？」她每天结束时记录：「今天质疑了哪个假设？学到了什么？」</p>
-<p>六个月后，她做的事情变少了，但产出与影响力反而更高。不是因为工具更好了，而是因为<strong>对思维的思维更好了</strong>。</p>
-<hr />
-<h2 id="82">8.2 核心命题：元认知需要系统，而非零散概念</h2>
-<p>前面各章讨论的元认知能力——觉察未知、精准提问、注意力调节、学会学习、价值判断、跨域连接——如果只是零散的概念，用处有限。它们需要被整合到一个<strong>系统</strong>里：一套可日常运行的<strong>元认知操作系统</strong>（Metacognitive OS），把理念落地为实践。</p>
-<p>本章的目标，就是把全书内容综合成可操作的框架。从「知道元认知很重要」到「每天在用它」——这是从理念到行动的最后一公里。</p>
-<hr />
-<h2 id="83">8.3 证据与思想实验</h2>
-<h3 id="831-os">8.3.1 元认知 OS 的四大支柱</h3>
-<p>Schraw（1998）等学者将元认知划分为几个核心维度。将其落实到日常实践，可归纳为<strong>四大支柱</strong>（Four Pillars of Metacognitive OS）：</p>
-<p>前七章的每一项元认知能力——校准认知边界（第 2 章）、精准提问（第 3 章）、调节注意力（第 4 章）、管理学习（第 5 章）、价值判断（第 6 章）、跨域连接（第 7 章）——都不是独立存在的。它们需要一个系统来整合、协调和日常化。这就是元认知操作系统的角色。它由四大支柱构成：</p>
-<ul>
-<li><strong>觉察（Awareness）</strong>：实时观察自己思维的能力。「我此刻在想什么？这是系统一（直觉）还是系统二（理性）？我处于学习模式还是生产模式？」</li>
-<li><strong>调节（Regulation）</strong>：在认知过程中调整策略的能力。「这样不行。我该从分析切换到提问。我该停止消费信息，开始创造。」</li>
-<li><strong>评估（Evaluation）</strong>：事后评估自己思维质量的能力。「我的判断好吗？我的信心校准了吗？我问对问题了吗？」</li>
-<li><strong>规划（Planning）</strong>：在开始前设计认知路径的能力。「这个问题需要哪种思维？我该部署哪些元认知工具？」</li>
-</ul>
-<div class="mermaid">flowchart TB
-    subgraph 元认知OS四大支柱
-        A[觉察<br/>实时观察思维] --> B[调节<br/>中途调整策略]
-        B --> C[评估<br/>事后检视质量]
-        C --> D[规划<br/>事前设计路径]
-        D --> A
-    end
-</div>
-<p>这四者不是线性流程，而是相互嵌入的循环。觉察触发调节；评估为下次规划提供依据；规划决定了你要觉察什么。</p>
-<h3 id="832-nelson-narens">8.3.2 Nelson &amp; Narens 监控—控制模型的日常化</h3>
-<p>Nelson 与 Narens（1990）在《元记忆：一个理论框架》中提出经典的<strong>监控—控制模型</strong>（monitoring-control model）。监控（Monitoring）对应元认知中的「观察与评估」；控制（Control）对应「调节与规划」。学术模型可以直接映射到日常实践：</p>
-<ul>
-<li><strong>监控 = 觉察 + 评估</strong>：你知道自己处于什么状态，以及你刚完成的工作质量如何。</li>
-<li><strong>控制 = 调节 + 规划</strong>：你能在过程中切换策略，也能在任务开始前设计认知路径。</li>
-</ul>
-<p>这个模型不是象牙塔里的理论，而是你每天都能调用的框架。当你感到「卡住了」，问自己：监控到问题了吗？该启动哪种控制？</p>
-<h3 id="833">8.3.3 日常元认知习惯</h3>
-<p>把四大支柱拆解为具体习惯：</p>
-<ul>
-<li><strong>早晨</strong>：「今天值得我投入深度注意力的一件事是什么？」（规划）</li>
-<li><strong>工作中</strong>：「我此刻的认知模式适合这个任务吗？」（觉察 + 调节）</li>
-<li><strong>决策后</strong>：「我对这个判断的信心多大？我过去的信心校准得准吗？」（评估）</li>
-<li><strong>晚上</strong>：「今天学到了什么？质疑了哪个假设？」（评估 + 规划）</li>
-</ul>
-<p>这些习惯不需要长时间，但需要<strong>稳定出现</strong>。它们的作用不是占用时间，而是建立<strong>元认知触点</strong>——在关键节点打断自动巡航，让你有机会检视与调整。</p>
-<h3 id="834-ai">8.3.4 把 AI 当作元认知训练伙伴</h3>
-<p>AI 可以成为强化你元认知的工具，前提是<strong>用它增强而非取代</strong>你的反思：</p>
-<ul>
-<li><strong>苏格拉底式提问者</strong>：「挑战我对 X 的假设。」</li>
-<li><strong>校准工具</strong>：「我相信 X，信心 80%。有哪些证据与之矛盾？」</li>
-<li><strong>红队</strong>：「我可能忽略了什么？反对我立场的最强论据是什么？」</li>
-<li><strong>反思提示</strong>：「总结我今天做的决策，指出可能的盲区。」</li>
-</ul>
-<p>核心原则：<strong>用 AI 提升你的元认知，而非代替它。</strong> 如果你把「问 AI」当作思考的终点，元认知会退化。如果你把 AI 的回答当作<strong>刺激你进一步反思的输入</strong>，元认知会强化。</p>
-<div class="mermaid">flowchart TB
-    subgraph AI作为元认知伙伴
-        A[苏格拉底提问者<br/>挑战假设] --> B[校准工具<br/>检验信心]
-        B --> C[红队对手<br/>找反例]
-        C --> D[反思提示<br/>识别盲区]
-        D --> A
-    end
-</div>
-<h3 id="835">8.3.5 元学习闭环</h3>
-<p>元认知不是一次性动作，而是<strong>持续循环</strong>：</p>
-<p><strong>规划 → 监控 → 评估 → 适应 → 规划</strong></p>
-<ul>
-<li><strong>每周</strong>：回顾哪些元认知习惯坚持下来了，哪些没有；为什么。</li>
-<li><strong>每月</strong>：检视你的思维模式是在进化，还是在固化。</li>
-<li><strong>每季</strong>：「这季度探索了哪个新领域？放下了哪个旧假设？」</li>
-</ul>
-<p>这个闭环把 Zimmerman（2002）的<strong>自我调节学习</strong>（self-regulated learning）——前思（forethought）、表现（performance）、自我反思（self-reflection）——从学生场景迁移到知识工作者。你不需要在教室里，也能用同样的结构：事前规划、事中监控、事后反思。</p>
-<h3 id="836">8.3.6 成长型心态：元认知的信念基础</h3>
-<p>Dweck（2006）的<strong>成长型心态</strong>（growth mindset）——相信能力可以发展，而非固定——本身是一种<strong>元认知信念</strong>。它决定你是否愿意在元认知上投资。</p>
-<p>如果你相信「我的思维方式改不了」，你不会花时间去觉察、调节、评估、规划。如果你相信「我可以通过练习变得更善于思考」，你才会持续投入元认知实践。成长型心态是元认知操作系统的<strong>启动前提</strong>。</p>
-<h3 id="837">8.3.7 思想实验：元认知仪表盘</h3>
-<p>想象有一个<strong>元认知仪表盘</strong>（Metacognitive Dashboard），实时显示你的认知状态——当前模式（创造/消费/评估/反应）、信心校准度、注意力分配、学习与绩效的平衡。</p>
-<p>它会揭示什么？也许你会发现：你 80% 的时间在「消费」模式，只有 10% 在「创造」；你的高信心判断经常出错，而低信心判断反而更准；你在早晨规划得很好，但下午就被邮件裹挟，完全忘了元认知。</p>
-<p>你无法真的造出一个实时仪表盘，但可以通过<strong>日记与反思</strong>近似它。每周花 15 分钟，回顾：这周我处于哪种模式的时间多？我的信心校准了吗？我的注意力花在了值得的地方吗？这种回顾，就是在脑中模拟仪表盘。</p>
-<div class="mermaid">flowchart TB
-    subgraph 元学习闭环
-        A[规划<br/>设计认知路径] --> B[监控<br/>实时觉察状态]
-        B --> C[评估<br/>检视质量校准]
-        C --> D[适应<br/>调整策略习惯]
-        D --> A
-    end
-</div>
-<h3 id="838">8.3.8 真实案例：元认知操作系统如何改变三个人的工作方式</h3>
-<p><strong>心脏外科医生的决策日记</strong>。一位心脏外科医生保持着一本「决策日记」——每次重大手术之后，她写下：(a) 她做了什么决定，(b) 当时的信心水平有多高，(c) 实际发生了什么。两年后，她发现自己在某类并发症上的信心系统性地偏高。她调整了判断，术后结果明显改善。这就是<strong>评估</strong>支柱在起作用。</p>
-<p><strong>产品经理的「模式切换」仪式</strong>。一位产品经理在显示器上贴了便签：「我此刻是在创造、评估、消费，还是在反应？」每当发现自己从创造滑向消费时，他会刻意站起来，走到窗边，重新校准。六个月后，他的创造时间占比从 15% 提升到 40%。这是<strong>觉察</strong>与<strong>调节</strong>支柱在起作用。</p>
-<p><strong>气候研究员的 AI 红队</strong>。一位气候研究员在提交任何论文前，会让 Claude「找出我论证中的五个弱点」。然后她会问：「这些弱点中，有哪些是我明明知道却选择忽略的？」答案总能让她惊讶。她这样做了一年，同行评审拒稿率下降了一半。这是用 AI 增强<strong>规划</strong>支柱。</p>
-<h3 id="839">8.3.9 元认知仪表盘的实操版本</h3>
-<p>将「元认知仪表盘」思想实验落地为可每日填写的模板：</p>
-<pre><code>日期: ____
-今日核心问题: ____（规划）
-认知模式分配: 创造__% / 评估__% / 消费__% / 反应__%（觉察）
-信心校准: 今天做了一个重要判断____，信心____%（评估）
-策略调整: 今天我切换了____策略，因为____（调节）
-明日一件事: ____（规划）
-</code></pre>
-<hr />
-<h2 id="84">8.4 反面论证：过度元思维也有代价</h2>
-<p>并非每一刻都需要元认知审视。<strong>分析瘫痪</strong>（analysis paralysis）可以发生在认知层面——你花太多时间「思考如何思考」，反而迟迟不行动。</p>
-<p>目标是建立<strong>自动化的习惯</strong>，让元认知从「费力」变成「省力」。初期你需要刻意提醒自己；熟练后，这些触点会内化，像呼吸一样自然。同时，有些人天生更善于元认知；有些人需要更多 scaffolding（脚手架）——例如更结构化的日志、更明确的提示、更频繁的复盘。没有单一标准，关键是找到适合你的节奏。</p>
-<hr />
-<h2 id="85">8.5 元认知时刻：设计你的个人系统</h2>
-<h3 id="os">练习一：设计你的元认知 OS</h3>
-<p>使用四大支柱，为每一项写下<strong>一个</strong>具体习惯：</p>
-<ul>
-<li><strong>觉察习惯</strong>：___</li>
-<li><strong>调节习惯</strong>：___</li>
-<li><strong>评估习惯</strong>：___</li>
-<li><strong>规划习惯</strong>：___</li>
-</ul>
-<p>不必追求完美。从最小可行版本开始：例如「觉察」可以是「每开始一个会议前，在心里默念：我此刻是学习模式还是生产模式？」「评估」可以是「每天结束时，用一句话写下：今天质疑了哪个假设？」</p>
-<h3 id="_1">练习二：七日元认知冲刺</h3>
-<p>承诺连续 7 天实践这四个习惯。每天做简短日志：今天做了哪几项？有什么变化？哪一项最难坚持？</p>
-<p>七天结束后回顾：哪个习惯最有价值？哪个可以简化或放弃？你不需要永远保持所有四个；迭代出适合你的组合即可。</p>
-<h3 id="ai">练习三：AI 元认知伙伴提示库</h3>
-<p>写下 5 个你经常用来借助 AI 做元认知训练的提示。例如：</p>
-<ol>
-<li>「挑战我对 [X] 的假设，至少给出三个反例。」</li>
-<li>「我 80% 相信 [Y]。列出可能推翻这一判断的证据。」</li>
-<li>「从反对者角度，最有说服力地批评我的立场：[Z]。」</li>
-<li>「总结我今天做的三个主要决策，并指出每个决策可能的盲区。」</li>
-<li>「如果我错了，最可能的原因是什么？」</li>
-</ol>
-<p>把这些提示保存在你常用的地方——笔记 App、浏览器书签、或 AI 对话的模板里。当你需要时，直接调用，而不是临时编一个。</p>
-<hr />
-<h2 id="86">8.6 总结与过渡</h2>
-<h3 id="_2">本章要点</h3>
-<ul>
-<li><strong>元认知需要系统</strong>：觉察、调节、评估、规划四大支柱需整合为日常操作系统。</li>
-<li><strong>Nelson &amp; Narens 模型可落地</strong>：监控 = 觉察 + 评估；控制 = 调节 + 规划。</li>
-<li><strong>日常习惯</strong>：晨间规划、工作中觉察与调节、决策后评估、晚间反思。</li>
-<li><strong>AI 作为元认知伙伴</strong>：苏格拉底提问、校准检验、红队、反思提示——用 AI 增强而非取代元认知。</li>
-<li><strong>元学习闭环</strong>：规划 → 监控 → 评估 → 适应，周/月/季不同频率的复盘。</li>
-<li><strong>成长型心态</strong>：相信思维可改进，是投入元认知的前提。</li>
-<li><strong>避免过度元思维</strong>：建立自动化习惯，让元认知从费力变省力。</li>
-</ul>
-<hr />
-<p>从个人实践出发，下一章我们将转向更大的图景：<strong>人类元认知的未来</strong>——在 AI 持续进化的背景下，人类的「对思维的思维」将走向何方？我们将探讨元认知作为人类最后护城河，在更长的时间尺度上意味着什么。</p>
-<hr />
-<h2 id="_3">参考文献</h2>
-<ol>
-<li>
-<p><strong>Dweck, C. S.</strong> (2006). <em>Mindset: The New Psychology of Success</em>. Random House.</p>
-</li>
-<li>
-<p><strong>Nelson, T. O., &amp; Narens, L.</strong> (1990). Metamemory: A Theoretical Framework. <em>Psychology of Learning and Motivation</em>, 26, 125–173.</p>
-</li>
-<li>
-<p><strong>Schraw, G.</strong> (1998). "Promoting General Metacognitive Awareness." <em>Instructional Science</em>, 26(1-2), 113-125. DOI: 10.1023/A:1003044231033 — 元认知觉察的通用促进策略，为构建个人元认知系统提供教学法支持。</p>
-</li>
-<li>
-<p><strong>Zimmerman, B. J.</strong> (2002). Becoming a Self-Regulated Learner. <em>Theory into Practice</em>, 41(2), 64–70.</p>
-</li>
-<li>
-<p><strong>Flavell, J. H.</strong> (1979). "Metacognition and Cognitive Monitoring: A New Area of Cognitive-Developmental Inquiry." <em>American Psychologist</em>, 34(10), 906-911. — 元认知奠基工作，觉察、监控、调节等核心概念的理论基础。</p>
-</li>
-</ol></div>
-      <div class="en-text"><h1 id="chapter-8-your-metacognitive-os">Chapter 8: Your Metacognitive OS</h1>
-<p><strong>Core Question</strong>: From concept to daily practice</p>
-<hr />
-<h2 id="81-opening-story-burnout-and-breakthrough">8.1 Opening Story: Burnout and Breakthrough</h2>
-<p>A product director had been running at full speed for three years. She used every AI tool available, optimizing outputs to the limit—emails, reports, requirements, data analysis. Then one day she burned out completely. She took two weeks off, shut down all notifications, and went to the coast.</p>
-<p>On the third evening, sitting on the beach, a question surfaced: <strong>"I've never once stopped to ask: How am I thinking about this?"</strong></p>
-<p>For three years she had been running. Using AI to write faster, search more accurately, do more. But she had never optimized her own <strong>cognitive processes</strong>—never examined her thinking patterns, attention allocation, or judgment calibration. She had been operating in "production mode" at full throttle, never switching to "learning mode" or "metacognitive mode."</p>
-<p>When she returned, she did one thing: she designed a <strong>personal metacognitive operating system</strong>—a set of daily habits and checkpoints that integrated awareness, regulation, evaluation, and planning into her workflow. Each morning she asked: "What is the one thing that deserves my deep attention today?" After decisions she asked: "How confident am I in this judgment? How well has my confidence been calibrated in the past?" Each evening she noted: "What assumption did I challenge today? What did I learn?"</p>
-<p>Six months later, she was doing less but achieving more. Not because of better tools, but because of <strong>better thinking about thinking</strong>.</p>
-<hr />
-<h2 id="82-core-thesis-metacognition-demands-a-system-not-scattered-concepts">8.2 Core Thesis: Metacognition Demands a System, Not Scattered Concepts</h2>
-<p>The metacognitive capabilities discussed in previous chapters—knowing unknowns, asking better questions, regulating attention, learning to learn, exercising judgment, cross-domain synthesis—are of limited use as isolated concepts. They need to be integrated into a <strong>system</strong>: a <strong>Metacognitive OS</strong> (元认知操作系统) that runs daily, turning ideas into practice.</p>
-<p>This chapter synthesizes the book into an actionable framework. From "knowing metacognition matters" to "using it every day"—that is the last mile from concept to action.</p>
-<hr />
-<h2 id="83-evidence-and-thought-experiments">8.3 Evidence and Thought Experiments</h2>
-<h3 id="831-the-four-pillars-of-metacognitive-os">8.3.1 The Four Pillars of Metacognitive OS</h3>
-<p>Schraw (1998) and others divide metacognition into core dimensions. Translating these into daily practice yields the <strong>Four Pillars</strong>:</p>
-<p>Every metacognitive capability from the previous seven chapters—calibrating knowledge boundaries (Ch. 2), precise questioning (Ch. 3), regulating attention (Ch. 4), managing learning (Ch. 5), value judgment (Ch. 6), cross-domain connection (Ch. 7)—does not exist in isolation. They need a system to integrate, coordinate, and operationalize them daily. This is the role of the Metacognitive OS. It is built on four pillars:</p>
-<ul>
-<li><strong>Awareness (觉察)</strong>: The ability to observe your own thinking in real time. "What am I thinking right now? Is this System 1 or System 2? Am I in learning mode or production mode?"</li>
-<li><strong>Regulation (调节)</strong>: The ability to adjust your cognitive strategy mid-stream. "This isn't working. I should switch from analyzing to questioning. I should stop consuming and start creating."</li>
-<li><strong>Evaluation (评估)</strong>: The ability to assess the quality of your own thinking after the fact. "Was my judgment good? Was my confidence calibrated? Did I ask the right questions?"</li>
-<li><strong>Planning (规划)</strong>: The ability to design your cognitive approach before starting. "What kind of thinking does this problem require? Which metacognitive tools should I deploy?"</li>
-</ul>
-<div class="mermaid">flowchart TB
-    subgraph Four Pillars
-        A[Awareness<br/>Observe Thinking] --> B[Regulation<br/>Adjust Strategy]
-        B --> C[Evaluation<br/>Assess Quality]
-        C --> D[Planning<br/>Design Path]
-        D --> A
-    end
-</div>
-<p>These four are not a linear sequence but an interconnected loop. Awareness triggers regulation; evaluation informs the next round of planning; planning determines what you attend to.</p>
-<h3 id="832-nelson-narens-monitoringcontrol-model-made-practical">8.3.2 Nelson &amp; Narens Monitoring–Control Model, Made Practical</h3>
-<p>Nelson and Narens (1990), in "Metamemory: A Theoretical Framework," propose the classic <strong>monitoring–control model</strong>. Monitoring corresponds to "observation and evaluation" in metacognition; control corresponds to "regulation and planning." The academic model maps directly onto daily practice:</p>
-<ul>
-<li><strong>Monitoring = Awareness + Evaluation</strong>: You know what state you are in and how well your recent work measured up.</li>
-<li><strong>Control = Regulation + Planning</strong>: You can shift strategy mid-task and design your cognitive path before starting.</li>
-</ul>
-<p>This model is not ivory-tower theory; it is a framework you can invoke daily. When you feel stuck, ask: Have I monitored the problem? What control should I deploy?</p>
-<h3 id="833-daily-metacognitive-habits">8.3.3 Daily Metacognitive Habits</h3>
-<p>Translating the four pillars into concrete habits:</p>
-<ul>
-<li><strong>Morning</strong>: "What is the one thing that deserves my deep attention today?" (Planning)</li>
-<li><strong>During work</strong>: "Am I in the right cognitive mode for this task?" (Awareness + Regulation)</li>
-<li><strong>After decisions</strong>: "How confident am I, and how accurate has my confidence been?" (Evaluation)</li>
-<li><strong>Evening</strong>: "What did I learn today? What assumption did I challenge?" (Evaluation + Planning)</li>
-</ul>
-<p>These habits need not take long, but they need to <strong>recur consistently</strong>. Their role is not to consume time but to create <strong>metacognitive touchpoints</strong>—pauses at key moments that interrupt autopilot and allow you to notice and adjust.</p>
-<h3 id="834-using-ai-as-a-metacognitive-training-partner">8.3.4 Using AI as a Metacognitive Training Partner</h3>
-<p>AI can reinforce your metacognition, provided you <strong>use it to enhance, not replace</strong>, your reflection:</p>
-<ul>
-<li><strong>Socratic questioner</strong>: "Challenge my assumptions about X."</li>
-<li><strong>Calibration tool</strong>: "I believe X with 80% confidence. What evidence contradicts this?"</li>
-<li><strong>Red team</strong>: "What am I missing? What's the strongest argument against my position?"</li>
-<li><strong>Reflection prompt</strong>: "Summarize the decisions I made today and identify potential blind spots."</li>
-</ul>
-<p>Core principle: <strong>Use AI to enhance your metacognition, not replace it.</strong> If "asking AI" becomes the end of your thinking, metacognition atrophies. If AI's answers serve as <strong>inputs that spur further reflection</strong>, metacognition strengthens.</p>
-<div class="mermaid">flowchart TB
-    subgraph AI as Partner
-        A[Socratic Questioner<br/>Challenge Assumptions] --> B[Calibration Tool<br/>Test Confidence]
-        B --> C[Red Team<br/>Find Counterevidence]
-        C --> D[Reflection Prompt<br/>Spot Blind Spots]
-        D --> A
-    end
-</div>
-<h3 id="835-the-meta-learning-loop">8.3.5 The Meta-Learning Loop</h3>
-<p>Metacognition is not a one-off action but a <strong>continuous cycle</strong>:</p>
-<p><strong>Plan → Monitor → Evaluate → Adapt → Plan</strong></p>
-<ul>
-<li><strong>Weekly</strong>: Review which metacognitive habits stuck and which didn't; why.</li>
-<li><strong>Monthly</strong>: Assess whether your thinking patterns are evolving or calcifying.</li>
-<li><strong>Quarterly</strong>: "What new domain did I explore this quarter? What old assumption did I drop?"</li>
-</ul>
-<p>This loop transplants Zimmerman's (2002) <strong>self-regulated learning</strong>—forethought, performance, self-reflection—from the classroom to knowledge work. You don't need a classroom to use the same structure: plan beforehand, monitor during, reflect afterward.</p>
-<h3 id="836-growth-mindset-the-belief-foundation-of-metacognition">8.3.6 Growth Mindset: The Belief Foundation of Metacognition</h3>
-<p>Dweck's (2006) <strong>growth mindset</strong> (成长型心态)—the belief that abilities can develop rather than stay fixed—is itself a <strong>metacognitive belief</strong>. It determines whether you invest in metacognition at all.</p>
-<p>If you believe "my thinking patterns can't change," you won't spend time on awareness, regulation, evaluation, or planning. If you believe "I can get better at thinking through practice," you will keep investing. Growth mindset is the <strong>boot condition</strong> for a metacognitive operating system.</p>
-<h3 id="837-thought-experiment-the-metacognitive-dashboard">8.3.7 Thought Experiment: The Metacognitive Dashboard</h3>
-<p>Imagine a <strong>Metacognitive Dashboard</strong> that displays your cognitive state in real time—current mode (creating/consuming/evaluating/reacting), confidence calibration, attention allocation, learning vs. performance balance.</p>
-<p>What would it reveal? Perhaps: 80% of your time in "consuming" mode, only 10% in "creating"; your high-confidence judgments often wrong, your low-confidence ones more accurate; strong morning planning, but afternoons hijacked by email, metacognition forgotten.</p>
-<p>You can't build a real-time dashboard, but you can <strong>approximate it through journaling and reflection</strong>. Spend 15 minutes each week reviewing: How much time was I in each mode? Was my confidence calibrated? Did my attention go where it deserved? That review is a mental simulation of the dashboard.</p>
-<div class="mermaid">flowchart TB
-    subgraph Meta-Learning Loop
-        A[Plan<br/>Design Path] --> B[Monitor<br/>Observe State]
-        B --> C[Evaluate<br/>Assess & Calibrate]
-        C --> D[Adapt<br/>Adjust Habits]
-        D --> A
-    end
-</div>
-<h3 id="838-real-cases-how-a-metacognitive-os-changed-three-peoples-work">8.3.8 Real Cases: How a Metacognitive OS Changed Three People's Work</h3>
-<p><strong>The surgeon who journals.</strong> A cardiac surgeon keeps a "decision journal"—after every major surgery she writes: (a) what she decided, (b) her confidence level, (c) what actually happened. After two years she discovered her confidence was systematically too high for a specific type of complication. She adjusted, and her outcomes improved measurably. The <strong>Evaluation</strong> pillar in action.</p>
-<p><strong>The product manager's mode-switch ritual.</strong> A PM uses a sticky note on his monitor: "Am I creating, evaluating, consuming, or reacting right now?" Whenever he catches himself drifting from creating to consuming, he physically stands up, walks to the window, and resets. After six months his creating-time ratio went from 15% to 40%. The <strong>Awareness</strong> and <strong>Regulation</strong> pillars in action.</p>
-<p><strong>The researcher's AI red team.</strong> A climate researcher, before submitting any paper, asks Claude to "find 5 weaknesses in my argument." She then asks: "Which of these weaknesses did I already know about but chose to ignore?" The answer always surprises her. She's been doing this for a year, and her peer review rejection rate dropped by half. Using AI to enhance the <strong>Planning</strong> pillar.</p>
-<h3 id="839-a-practical-metacognitive-dashboard-template">8.3.9 A Practical Metacognitive Dashboard Template</h3>
-<p>Turn the Metacognitive Dashboard thought experiment into a daily tracking format:</p>
-<pre><code>Date: ____
-Core question today: ____ (Planning)
-Mode allocation: Creating__% / Evaluating__% / Consuming__% / Reacting__% (Awareness)
-Confidence calibration: Important judgment today: ____, confidence ____% (Evaluation)
-Strategy switch: Today I switched ____ strategy because ____ (Regulation)
-One thing tomorrow: ____ (Planning)
-</code></pre>
-<hr />
-<h2 id="84-counter-argument-the-cost-of-excessive-meta-thinking">8.4 Counter-Argument: The Cost of Excessive Meta-Thinking</h2>
-<p>Not every moment requires metacognitive scrutiny. <strong>Analysis paralysis</strong> can occur at the cognitive level—you spend so much time "thinking about how to think" that you never act.</p>
-<p>The goal is to build <strong>automatic habits</strong> so metacognition becomes effortless rather than effortful. At first you need deliberate reminders; with practice, these touchpoints internalize and feel as natural as breathing. Some people are natural metacognizers; others need more scaffolding—more structured journals, clearer prompts, more frequent reviews. There is no single standard; the key is finding a rhythm that works for you.</p>
-<hr />
-<h2 id="85-metacognitive-moment-design-your-personal-system">8.5 Metacognitive Moment: Design Your Personal System</h2>
-<h3 id="exercise-1-design-your-metacognitive-os">Exercise 1: Design Your Metacognitive OS</h3>
-<p>Using the four pillars, write down <strong>one</strong> specific habit for each:</p>
-<ul>
-<li><strong>Awareness habit</strong>: ___</li>
-<li><strong>Regulation habit</strong>: ___</li>
-<li><strong>Evaluation habit</strong>: ___</li>
-<li><strong>Planning habit</strong>: ___</li>
-</ul>
-<p>Don't aim for perfection. Start with the smallest viable version. For example, "Awareness" could be: "Before each meeting, silently ask: Am I in learning mode or production mode?" "Evaluation" could be: "Each evening, in one sentence: What assumption did I challenge today?"</p>
-<h3 id="exercise-2-the-7-day-metacognition-sprint">Exercise 2: The 7-Day Metacognition Sprint</h3>
-<p>Commit to practicing these four habits for 7 consecutive days. Keep a brief daily log: Which did you do? What changed? Which was hardest to sustain?</p>
-<p>After the week, review: Which habit was most valuable? Which could be simplified or dropped? You need not keep all four forever; iterate to a combination that fits you.</p>
-<h3 id="exercise-3-your-ai-metacognition-partner-prompt-library">Exercise 3: Your AI Metacognition Partner Prompt Library</h3>
-<p>Write 5 prompts you would regularly use to leverage AI for metacognitive training. For example:</p>
-<ol>
-<li>"Challenge my assumptions about [X]. Give at least three counterexamples."</li>
-<li>"I'm 80% confident that [Y]. List evidence that could overturn this."</li>
-<li>"From an opponent's standpoint, most persuasively criticize my position: [Z]."</li>
-<li>"Summarize three major decisions I made today and identify potential blind spots for each."</li>
-<li>"If I'm wrong, what's the most likely reason?"</li>
-</ol>
-<p>Save these prompts where you'll use them—notes app, browser bookmarks, or AI chat templates. When you need them, call them up instead of improvising.</p>
-<hr />
-<h2 id="86-summary-and-transition">8.6 Summary and Transition</h2>
-<h3 id="chapter-takeaways">Chapter Takeaways</h3>
-<ul>
-<li><strong>Metacognition needs a system</strong>: Awareness, regulation, evaluation, and planning must be integrated into a daily operating system.</li>
-<li><strong>Nelson &amp; Narens model is actionable</strong>: Monitoring = awareness + evaluation; control = regulation + planning.</li>
-<li><strong>Daily habits</strong>: Morning planning; awareness and regulation during work; post-decision evaluation; evening reflection.</li>
-<li><strong>AI as metacognitive partner</strong>: Socratic questioning, calibration testing, red team, reflection prompts—use AI to enhance, not replace, metacognition.</li>
-<li><strong>Meta-learning loop</strong>: Plan → Monitor → Evaluate → Adapt, with weekly, monthly, and quarterly reviews.</li>
-<li><strong>Growth mindset</strong>: Believing that thinking can improve is a prerequisite for investing in metacognition.</li>
-<li><strong>Avoid excessive meta-thinking</strong>: Build automatic habits so metacognition becomes effortless.</li>
-</ul>
-<hr />
-<p>From personal practice we turn to the bigger picture. Next chapter: <strong>The Future of Human Cognition</strong>—where does human metacognition go as AI keeps evolving? We explore what it means for metacognition to serve as humanity's last moat over longer time scales.</p>
-<hr />
-<h2 id="references">References</h2>
-<ol>
-<li>
-<p><strong>Dweck, C. S.</strong> (2006). <em>Mindset: The New Psychology of Success</em>. Random House.</p>
-</li>
-<li>
-<p><strong>Nelson, T. O., &amp; Narens, L.</strong> (1990). Metamemory: A Theoretical Framework. <em>Psychology of Learning and Motivation</em>, 26, 125–173.</p>
-</li>
-<li>
-<p><strong>Schraw, G.</strong> (1998). "Promoting General Metacognitive Awareness." <em>Instructional Science</em>, 26(1-2), 113-125. DOI: 10.1023/A:1003044231033 — Strategies for promoting general metacognitive awareness; provides pedagogical support for building a personal metacognitive system.</p>
-</li>
-<li>
-<p><strong>Zimmerman, B. J.</strong> (2002). Becoming a Self-Regulated Learner. <em>Theory into Practice</em>, 41(2), 64–70.</p>
-</li>
-<li>
-<p><strong>Flavell, J. H.</strong> (1979). "Metacognition and Cognitive Monitoring: A New Area of Cognitive-Developmental Inquiry." <em>American Psychologist</em>, 34(10), 906-911. — Foundational work on metacognition; theoretical basis for awareness, monitoring, and regulation.</p>
-</li>
-</ol></div>
-    </article>
-    <nav class="page-nav">
-      <a class="nav-btn prev" href="cross-domain-synthesis.html">← <span class="zh-text">第七章：跨域连接</span><span class="en-text">Ch7: Cross-Domain</span></a>
-      <a class="nav-btn next" href="future-of-cognition.html"><span class="zh-text">第九章：认知的未来</span><span class="en-text">Ch9: The Future</span> →</a>
-    </nav>
-  </main>
-</div>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.9.0/highlight.min.js"></script>
-<script type="module">
-import mermaid from 'https://cdn.jsdelivr.net/npm/mermaid@11/dist/mermaid.esm.min.mjs';
-mermaid.initialize({ startOnLoad: true, theme: document.body.classList.contains('light') ? 'default' : 'dark' });
-</script>
-<div id="searchOverlay" class="search-overlay" onclick="if(event.target===this)closeSearch()">
-  <div class="search-box">
-    <div class="search-input-wrap">
-      <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="8"/><path d="m21 21-4.35-4.35"/></svg>
-      <input id="searchInput" class="search-input" placeholder="搜索全书内容… / Search all chapters…" oninput="handleSearch(this.value)" autocomplete="off">
-    </div>
-    <div id="searchResults" class="search-results"></div>
+<div class="gate">
+  <div class="lock">&#128274;</div>
+  <h1>第八章：元认知 OS | 元认知：AI 时代的人类最后护城河</h1>
+  <p>This content is password protected</p>
+  <div class="input-wrap">
+    <input id="pw" type="password" placeholder="Enter password / 输入密码" autofocus
+           onkeydown="if(event.key==='Enter')unlock()">
   </div>
+  <button class="btn" onclick="unlock()">Unlock / 解锁</button>
+  <div class="err hide" id="err">Password incorrect / 密码错误</div>
+  <div class="loading" id="loading"><span class="spinner"></span>Decrypting...</div>
 </div>
-<script src="js/main.js"></script>
+
+<script>
+var ENC = {
+  salt: "PGGPQsfInVBLv69Fypd0Ew==",
+  iv:   "5oHEqdoOMi2ihRCA",
+  ct:   "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"
+};
+var ITER = 100000;
+
+function b64decode(s) {
+  var bin = atob(s), arr = new Uint8Array(bin.length);
+  for (var i = 0; i < bin.length; i++) arr[i] = bin.charCodeAt(i);
+  return arr;
+}
+
+async function deriveKey(pw, salt) {
+  var enc = new TextEncoder();
+  var km = await crypto.subtle.importKey("raw", enc.encode(pw), "PBKDF2", false, ["deriveKey"]);
+  return crypto.subtle.deriveKey(
+    { name: "PBKDF2", salt: salt, iterations: ITER, hash: "SHA-256" },
+    km,
+    { name: "AES-GCM", length: 256 },
+    false,
+    ["decrypt"]
+  );
+}
+
+async function tryDecrypt(pw) {
+  var salt = b64decode(ENC.salt);
+  var iv   = b64decode(ENC.iv);
+  var ct   = b64decode(ENC.ct);
+  var key  = await deriveKey(pw, salt);
+  var dec  = await crypto.subtle.decrypt({ name: "AES-GCM", iv: iv }, key, ct);
+  return new TextDecoder().decode(dec);
+}
+
+async function unlock() {
+  var pw = document.getElementById("pw").value;
+  if (!pw) return;
+  var errEl = document.getElementById("err");
+  var loadEl = document.getElementById("loading");
+  errEl.classList.add("hide");
+  loadEl.style.display = "block";
+  try {
+    var html = await tryDecrypt(pw);
+    sessionStorage.setItem("book-pw", pw);
+    document.open();
+    document.write(html);
+    document.close();
+  } catch(e) {
+    loadEl.style.display = "none";
+    errEl.classList.remove("hide");
+    document.getElementById("pw").select();
+  }
+}
+
+(async function() {
+  var cached = sessionStorage.getItem("book-pw");
+  if (!cached) return;
+  try {
+    var html = await tryDecrypt(cached);
+    document.open();
+    document.write(html);
+    document.close();
+  } catch(e) {
+    sessionStorage.removeItem("book-pw");
+  }
+})();
+</script>
 </body>
 </html>
